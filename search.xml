@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>2020-12-22小记</title>
-    <url>/2020/12/23/2020-12-22%E5%B0%8F%E8%AE%B0/</url>
+    <url>/2020/12/23/diaries/2020-12-22%E5%B0%8F%E8%AE%B0/</url>
     <content><![CDATA[<p>​    历时三天，我的博客终算是小有模样了，这两天一共加了五个功能<span id="more"></span>，实现了 <strong>valine评论区</strong> ，<strong>博客全局音乐播放</strong>，<strong>天气插件</strong>，<strong>站点访问记录插件</strong>，还有一个就是<strong>站长功能设置</strong>啦，由于强迫症和心里洁癖，<strong>实现全局音乐播放</strong>的功能花了我不少时间，其实按网上教程来做着实不难，也就几步复制粘贴的事情，由于是初次接触，还想一口吃个胖子想要实现更加完美的功能，结果在配置一开始的时候连<code>Aplayer</code>和<code>Meting</code>的关系都没搞清楚，就在那硬调试，想想我还真是倔的可以，就这样眼高手低的事情没少做过，不过还可以啦，花费的时间也让我把它的特性摸了个大概，<code>hexo</code>的使用也熟练不少。。。</p>
 <p>​    这两天花的时间主要都是在错误的调试上，印象最深的是今天那个因为<code>nib</code>包里的<code>stylus</code>版本问题，出现一个叫什么循环依赖性错误，就是<code>hexo g</code>的时候会生成一串警告，对于文章生成其实没什么影响，但是看着着实恶心人，从中午磨到下午，看了无数文章试了无数方法都以失败告终，沉下心来之后，跟着我找到的认为最可靠的文章一步步，最后还真让我解决了，欣喜万分，后来反思了一下，还是老毛病，心急，就这样中间还犯了n次低级错误，想想还真是服了自己。。。</p>
 <p>​    博客建立初期，内容还十分匮乏，这几天尽快把博客的折腾过程形成文章吧。。。</p>
@@ -17,7 +17,7 @@
   </entry>
   <entry>
     <title>离校的这几天</title>
-    <url>/2021/06/15/2021%E5%B9%B46%E6%9C%8814%E6%97%A5/</url>
+    <url>/2021/06/15/diaries/2021%E5%B9%B46%E6%9C%8814%E6%97%A5/</url>
     <content><![CDATA[<p>​    </p>
 <p>忙活了些时日，终于结束了毕业设计，忙着的时候感觉非常烦恼，想着怎么还不结束，拖了近三个月的时间，已经让我有了一些不耐，但是真的结束之后，我却又不知道该做些什么，这三个月，虽然谈不上身心俱疲，不知道为什么，确也让我心里那么不是滋味，想想这四年，过得真快，有多少时间被自己浪费，有多少蠢事被自己犯下，虽然也有些收获，到了最后，留在心间的，最多的还是怅然…</p>
 <p>​    这段时间，低落的情绪始终缭绕在我的心里，没有事做，没有人可以陪着分享这种感受，我好像是属于那种脱群的人，当大家在热闹开心的在一起嬉戏玩闹时，我心里失落的情绪怎么也驱散不掉，也许大家期盼的是未来，我可能在害怕结束…文字真是可笑，写出来的东西总是会变了味道，这么矫情，也许真正可笑的我自己吧..</p>
@@ -32,14 +32,14 @@
   </entry>
   <entry>
     <title>Git和Github是什么关系？</title>
-    <url>/2020/12/23/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/</url>
-    <content><![CDATA[<p><img src="/2020/12/23/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/GitAndGithub.jpeg" alt="GitAndGithub"></p>
+    <url>/2020/12/23/posts/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/</url>
+    <content><![CDATA[<p><img src="/2020/12/23/posts/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/GitAndGithub.jpeg" alt="GitAndGithub"></p>
 <p><code>Git</code> 是一款免费、开源的<a href="版本控制"><strong>版本控制</strong></a>管理软件<a id="Git"></a></p>
 <p><code>Github</code> 是用 <code>Git</code> 做<strong>版本控制</strong>的代码托管平台</p>
 <span id="more"></span>
 
 <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>简单来说，<code>Git</code>就是一款能够实现<strong>版本控制</strong>功能的程序，只不过不像一般的用户应用程序，具有美观的GUI界面，它要通过命令行的形式去使用，如下：<code>git clone http://git.kernel.org/linux/kernel/git/torvalds/linux-2.6.git </code> 将linux系统的仓库下载到自己的电脑上</p>
-<img src="/2020/12/23/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Git_bash.jpg" alt="Git程序界面">
+<img src="/2020/12/23/posts/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Git_bash.jpg" alt="Git程序界面">
 
 
 
@@ -72,16 +72,16 @@
 <p>​    如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能），采用<strong>版本控制系统（VCS）</strong>是个明智的选择。 有了它你就可以将选定的文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。 使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。 但额外增加的工作量却微乎其微。</p>
 <h4 id="本地版本控制系统"><a href="#本地版本控制系统" class="headerlink" title="本地版本控制系统"></a>本地版本控制系统</h4><p>​    许多人习惯用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别。 就像我举的那个栗子一样，这么做唯一的好处就是简单，但是特别容易犯错。 有时候会混淆所在的工作目录，一不小心会写错文件或者覆盖意想外的文件。</p>
 <p>​    为了解决这个问题，人们很久以前就开发了许多种<strong>本地版本控制系统</strong>，大多都是采用某种简单的数据库来记录文件的历次更新差异。</p>
-<img src="/2020/12/23/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Local_VCS.png" alt="本地版本控制系统">
+<img src="/2020/12/23/posts/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Local_VCS.png" alt="本地版本控制系统">
 
 <p>​    其中最流行的一种叫做 RCS，现今许多计算机系统上都还看得到它的踪影。 <a href="https://www.gnu.org/software/rcs/">RCS</a> 的工作原理是在硬盘上保存补丁集（补丁是指文件修订前后的变化）；通过应用所有的补丁，可以重新计算出各个版本的文件内容。</p>
 <h4 id="集中化的版本控制系统"><a href="#集中化的版本控制系统" class="headerlink" title="集中化的版本控制系统"></a>集中化的版本控制系统</h4><p>​    接下来人们又遇到一个问题，如何让在不同系统上的开发者协同工作？ 于是，<strong>集中化的版本控制系统（Centralized Version Control Systems，简称 CVCS）</strong>应运而生。 这类系统，诸如 CVS、Subversion 以及 Perforce 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。 多年以来，这已成为版本控制系统的标准做法。</p>
-<img src="/2020/12/23/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Centralized_VCS.png" alt="集中化的版本控制系统">
+<img src="/2020/12/23/posts/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Centralized_VCS.png" alt="集中化的版本控制系统">
 
 <p>​    这种做法带来了许多好处，特别是相较于老式的本地 VCS 来说。 现在，每个人都可以在一定程度上看到项目中的其他人正在做些什么。 而管理员也可以轻松掌控每个开发者的权限，并且管理一个 CVCS 要远比在各个客户端上维护本地数据库来得轻松容易。</p>
 <p>​    事分两面，有好有坏。 这么做最显而易见的缺点是中央服务器的单点故障。 如果宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。 如果中心数据库所在的磁盘发生损坏，又没有做恰当备份，毫无疑问你将丢失所有数据——包括项目的整个变更历史，只剩下人们在各自机器上保留的单独快照。 本地版本控制系统也存在类似问题，只要整个项目的历史记录被保存在单一位置，就有丢失所有历史更新记录的风险。</p>
 <h4 id="分布式版本控制系统"><a href="#分布式版本控制系统" class="headerlink" title="分布式版本控制系统"></a>分布式版本控制系统</h4><p>​    于是分布式版本控制系统（Distributed Version Control System，简称 DVCS）面世了。 在这类系统中，像 <a href="#Git"><strong>Git</strong></a>、Mercurial、Bazaar 以及 Darcs 等，客户端并不只提取最新版本的文件快照(意思就是当前最新的文件版本)， 而是把代码仓库完整地镜像下来，包括完整的历史记录。 这么一来，任何一处协同工作用的服务器发生故障，事后都可以用任何一个镜像出来的本地仓库恢复。 因为每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</p>
-<img src="/2020/12/23/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Distributed_VCS.png">
+<img src="/2020/12/23/posts/Git%E5%92%8CGithub%E6%98%AF%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB/Distributed_VCS.png">
 
 <p>​    更进一步，许多这类系统都可以指定和若干不同的远端代码仓库进行交互。籍此，你就可以在同一个项目中，分别和不同工作小组的人相互协作。 你可以根据需要设定不同的协作流程，比如层次模型式的工作流，而这在以前的集中式系统中是无法实现的。</p>
 <h3 id><a href="#" class="headerlink" title></a></h3>]]></content>
@@ -96,131 +96,22 @@
       </tags>
   </entry>
   <entry>
-    <title>关于SSH</title>
-    <url>/2020/12/24/%E5%85%B3%E4%BA%8ESSH/</url>
-    <content><![CDATA[<img src="/2020/12/24/%E5%85%B3%E4%BA%8ESSH/SSH.jpg" alt="SSH" style="zoom:80%;">
-
-<span id="more"></span>
-
-<h1 id="什么是SSH？"><a href="#什么是SSH？" class="headerlink" title="什么是SSH？"></a>什么是SSH？</h1><p>​    <strong>Secure Shell</strong> (安全外壳协议，简称<strong>SSH</strong>) 是一种加密的 <strong>网络传输协议</strong>，目的是实现<strong>安全远程登陆</strong>以及其它<strong>安全网络服务</strong></p>
-<blockquote>
-<p>SSH仅仅是一项<strong>协议标准</strong>，其具体的实现有很多，既有开源实现的OPenSSH，也有商业实现方案，使用最广泛的当然是开源实现的OpenSSH</p>
-</blockquote>
-<br>
-
-<p>​    如果一个用户使用SSH协议登录另一台远程计算机，我们就可以认为这种登录是安全的，最早的时候计算机之间的通信都是明文通信，即没有经过加密，一旦被截获信息就暴露无疑，1995年芬兰赫尔辛基理工大学的研究员Tatu Ylönen设计了ssh协议的第一个版本，同年七月份，以免费软件的形式发布了这个协议的一个实现，迅速流行起来</p>
-<br>
-
-<br>
-
-<h1 id="SSH实现原理"><a href="#SSH实现原理" class="headerlink" title="SSH实现原理"></a>SSH实现原理</h1><blockquote>
-<p>预备知识：密码学</p>
-</blockquote>
-<p>​    SSH采用非对称加密方式，进行加密登录和传输，要进行传输首先就要 <strong>建立通信/登录</strong> ，SSH建立连接主要有两种方式</p>
-<br>
-
-<br>
-
-<h2 id="基于口令认证"><a href="#基于口令认证" class="headerlink" title="基于口令认证"></a>基于口令认证</h2><p>​    实际上是对sever端的公钥或者指纹进行确认，确认建立连接时的公钥或者指纹是属于你要连接的那个主机的，而不是黑客替换成的自己的公钥（即中间人攻击），流程如下：</p>
-<p>​    </p>
-<img src="/2020/12/24/%E5%85%B3%E4%BA%8ESSH/Token_Authentication.webp" alt="Token_Authentication">
-
-<ol>
-<li><p>远程Server收到Client端用户TopGun的登录请求，Server把自己的公钥发给用户。</p>
-</li>
-<li><p>Client使用这个公钥，将密码进行加密。</p>
-</li>
-<li><p>Client将加密的密码发送给Server端。</p>
-</li>
-<li><p>远程Server用自己的私钥，解密登录密码，然后验证其合法性。</p>
-</li>
-<li><p>若验证结果，给Client相应的响应。</p>
-<br>
-
-<p>可以看到，直接采用非对称加密建立连接的过程，并不安全，因为你无法确保TopGun收到的公钥来自于Sever端，比如上文提到的中间人攻击：</p>
-<img src="/2020/12/24/%E5%85%B3%E4%BA%8ESSH/Middle_Hacker.webp" alt="Middle_Hacker">
-
-<p>​    中间人通过这种方式可以轻易的获取你的账号密码并冒充你登录服务端，即所谓中间人攻击，那么如何避免这种情况的发生呢？就是我们所说的 <strong>基于口令的认证</strong> </p>
-<br>
-
-<p>​    第一次登陆时，系统会出现类似下面的提示信息：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   The authenticity of host <span class="string">&#x27;ssh-server.example.com (12.18.429.21)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">   RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)? </span></span><br></pre></td></tr></table></figure>
-
-<p>意思是“无法确认主机ssh-server.example.com（12.18.429.21）的真实性，不过知道它的公钥指纹，是否继续连接？”</p>
-<blockquote>
-<p>所谓公钥指纹，其实就是将公钥进行hash生成的一个128位的序列，用这个序列就可以代表公钥，因为具有唯一性，不会重复，所以称之为指纹(fingerprint)</p>
-<p>为什么不用公钥，反倒要生成一个指纹代替？</p>
-<p>主要是公钥位数比较长，向rsa算法生成的公钥有1024位，比较起来不方便，由于指纹位数比较少，而且不同的公钥生成的指纹不会重复，具有唯一性，所以用指纹代替</p>
-</blockquote>
-<br>
-
-<p>现在又有疑问了，你怎么知道这个指纹是不是属于目标主机而不是中间人的呢？</p>
-</li>
-</ol>
-<blockquote>
-<p>实际上，这个没有什么好办法，远程主机必须在自己的网站上贴出自己的公钥指纹，以便用户自行核对，从而确定目标主机的身份，允许进行连接</p>
-</blockquote>
-<br>
-
-<p>如果输入yes后，会出现下面的信息：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Warning: Permanently added &#x27;ssh-server.example.com,12.18.429.21&#x27; (RSA) to the list of known hosts. </span><br><span class="line">Password: (enter password)</span><br></pre></td></tr></table></figure>
-
-<p>​    即该host已被确认，并被追加到know_hosts中，然后需要输入密码，后面的流程就如第一幅图所示了</p>
-<img src="/2020/12/24/%E5%85%B3%E4%BA%8ESSH/Token_Authentication.webp" alt="Token_Authentication">
-
-<blockquote>
-<p>​    关于known_hosts文件，它记录的就是你连接过并且信赖的主机，这样当你下次再进行连接时，就不需要再次询问你是否信任该主机并进行连接了，而是直接让你输入密码进行登录</p>
-</blockquote>
-<br>
-
-<br>
-
-<br>     
-
-<h2 id="基于公钥认证"><a href="#基于公钥认证" class="headerlink" title="基于公钥认证"></a>基于公钥认证</h2><blockquote>
-<p>​    如果是根据口令进行认证，每一次登录都需要输入密码，一般登录主机都需要密码进行身份验证，确保你是主机的用户，或者其它利用ssh方式进行登录的网站，会要求你账号和密码都要输入，这样每一次登录就比较烦，都要输入账号密码才可以，但是接下来介绍的<strong>基于公钥认证</strong>就不需要这么麻烦</p>
-</blockquote>
-<p>流程如下：</p>
-<img src="/2020/12/24/%E5%85%B3%E4%BA%8ESSH/PubKey_Authentication.webp" alt="PubKey_Authentication">
-
-<ol>
-<li>Client将自己的公钥存放在Server上，追加在文件authorized_keys中。</li>
-<li>Server端接收到Client的连接请求后，会在authorized_keys中匹配到Client的公钥pubKey，并生成随机数R，用Client的公钥对该随机数进行加密得到pubKey(R)<br>，然后将加密后信息发送给Client。</li>
-<li>Client端通过私钥进行解密得到随机数R，然后对随机数R和本次会话的SessionKey利用MD5生成摘要Digest1，发送给Server端。</li>
-<li>Server端会也会对R和SessionKey利用同样摘要算法生成Digest2。</li>
-<li>Server端会最后比较Digest1和Digest2是否相同，完成认证过程。    </li>
-</ol>
-<p>​    </p>
-<p>​    简单说就是，就是用户将自己的公钥储存在远程主机上。登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录，不再要求密码。  </p>
-<p>​    这样就不会有问题了，因为公钥是公开的，即使被别人截获也没有问题，因为实际上用户是通过私钥来证明自己的身份的，因为只有私钥才可以解开用公钥进行加密的随机字符串</p>
-<br>    
-
-<p>​    下面是将自己的公钥设置在Github上的展示：</p>
-<img src="/2020/12/24/%E5%85%B3%E4%BA%8ESSH/Set_PubKey.webp" alt="Set_PubKey">
-
-
-
-<br>
-
-<br>
-
-<br>
-
-<br>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.jianshu.com/p/33461b619d53">图解SSH原理</a>——————</p>
+    <title>草稿自留</title>
+    <url>/2020/12/25/posts/%E8%8D%89%E7%A8%BF%E8%87%AA%E7%95%99/</url>
+    <content><![CDATA[<p>存放一些待使用的摘抄<span id="more"></span></p>
+<h3 id="什么是pki"><a href="#什么是pki" class="headerlink" title="什么是pki"></a>什么是pki</h3><ul>
+<li>PKI 就是 Public Key Infrastructure 的缩写，翻译过来就是公开密钥基础设施。<strong>它是利用公开密钥技术所构建的，解决网络安全问题的，普遍适用的一种基础设施。</strong>美国政府的一个报告中把 PKI 定义为全面解决安全问题的基础结构，从而大大扩展了 PKI 的概念。而我们认为，<code>采用了公开密钥技术的基础设施就可以称为 PKI 。</code>公开密钥技术也就是利用非对称算法的技术。说 PKI 是基础设施，就意味着它对信息网络的重要。将 PKI 在网络信息空间的地位与电力基础设施在工业生活中的地位进行类比非常确切。电力系统，通过伸到用户的标准插座为用户提供能源。 PKI 通过延伸到用户本地的接口，为各种应用提供安全的服务，如认证、身份识别、数字签名、加密等。从概念上讲，如果离开使用 PKI 的应用系统， PKI 本身没有任何实际的用处，正如电力系统离开电器设备也没有用一样。有了 PKI ，安全应用程序的开发者不用再关心那些复杂的数学运算和模型，而直接按照标准使用一种插座（接口）。用户也不用关心如何进行对方的身份鉴别而可以直接使用标准的插座，正如在电力基础设施上使用电吹风一样。</li>
+<li><code>PKI 中最基本的元素就是数字证书。</code>所有安全的操作主要通过证书来实现。 PKI 的硬设备还包括签置这些证书的证书机构 (<strong>CA</strong>) ，登记和批准证书签置的登记机构 (<strong>RA</strong>) ，以及存储和发布这些证书的<strong>电子目录</strong>。 PKI 中还包括证书策略，证书路径以及证书的使用者。所有这些都是 PKI 的基本元素。许多这样的基本元素有机地结合在一起就构成了 PKI 。</li>
+</ul>
 ]]></content>
-      <categories>
-        <category>技术相关</category>
-      </categories>
       <tags>
-        <tag>SSH</tag>
+        <tag>草稿</tag>
       </tags>
   </entry>
   <entry>
     <title>密码学</title>
-    <url>/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/</url>
-    <content><![CDATA[<p><img src="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/Password.jpg" alt="Password"></p>
+    <url>/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/</url>
+    <content><![CDATA[<p><img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/Password.jpg" alt="Password"></p>
 <span id="more"></span>
 
 <p>在密码学中，有一个五元组：{明文、密文、密钥、加密算法、解密算法}，对应的加密方案称为密码体制（或密码）</p>
@@ -232,10 +123,10 @@
 <br>
 
 <h2 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h2><p>加密和解密使用同一个密钥，主要算法包括：DES、3DES、RC2、RC4</p>
-<img src="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/Symmetric-key algorithm.webp" alt="对称密钥算法">
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/Symmetric-key algorithm.webp" alt="对称密钥算法">
 
 <p>例如：</p>
-<img src="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/对称加密.jpeg" alt="对称加密">
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/对称加密.jpeg" alt="对称加密">
 
 <br>
 
@@ -244,14 +135,14 @@
 <h2 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a>非对称加密算法</h2><p>两个密钥同时产生：一把密钥（<strong>公钥</strong>）是公开的，任何人都可以得到。另一把密钥（<strong>私钥</strong>）只有密钥的拥有者知道</p>
 <p>用其中一把密钥（公钥或者是私钥）加密的信息，只能用另一把打开，主要算法包括：RSA算法，ECC（椭圆曲线）算法</p>
 <p>由已知的公钥几乎不可能推导出私钥，其实可以推出，按现在的计算机技术水平，要破解目前采用的1024位RSA密钥，需要上千年的计算时间，所以基本等于推不出来</p>
-<img src="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm1.webp" alt="非对称密钥算法1">
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm1.webp" alt="非对称密钥算法1">
 
-<img src="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm2.webp" alt="非对称密钥算法2">
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm2.webp" alt="非对称密钥算法2">
 
 <p>例如：</p>
-<img src="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密.jpeg" alt="非对称加密" style="zoom:67%;">
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密.jpeg" alt="非对称加密" style="zoom:67%;">
 
-<img src="/2020/12/24/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密2.jpeg" alt="非对称加密2" style="zoom:67%;">
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密2.jpeg" alt="非对称加密2" style="zoom:67%;">
 
 <br>
 
@@ -316,25 +207,131 @@
       </tags>
   </entry>
   <entry>
-    <title>建站伊始</title>
-    <url>/2020/12/22/%E5%BB%BA%E7%AB%99%E4%BC%8A%E5%A7%8B/</url>
-    <content><![CDATA[<p>​    其实很久之前就想拥有一个属于自己的博客了，但是由于时间关系加本身是个计算机方面的小白，就一直停留在念想当中。。。<span id="more"></span></p>
-<p>​    在此之前，我对于网站的架构一直停留在 html，css，js，source，index 这种简单的印象里，无非是写一些html，引用source文件夹里的各种vedio，audio，img资源，通过css和js美化，然后发布到网站上去，之前也有一个尝试，花10块钱在一个网站上买了个小域名，还附送了100M的空间，暑假里和家人去旅游的时候，我把旅游的全程计划写成了一堆html文件，然后网上找了个网站模板，文件结构理清之后用flashfxp往远程主机里一传，还真弄出了个有模有样的小网站，当时也挺高兴的，毕竟头一次能够在网上检索出自己的东西，其实要是真的就那样搞个网站也不是不可，文件结构简单，自己还清楚，引用的资源基本也都是主机资源，这点因为我不太相信使用在线图床这种服务，之前貌似有个挺大的图床关掉了，那段时间在网上就经常看到有一些文章的图片都无法正常显示，而且平时浏览网站，也会出现一些图片无法加载的情况，让我很是恼火，对于自己写的东西，我是万万不能容忍有这种情况发生的，所以我的文件一般都是本地引用，当然肯定是有得必有失，就是主机空间消耗过多，这个问题以后再说吧，车到山前必有路。。。</p>
-<p>​    恰逢这段时间没什么课，一直学习还挺累的，也没啥意思，趁休息的时候又捡起了html，css相关的课程知识，建一个自己的博客这个想法又从脑子里冒了出来，闲着也是闲着，开整呗。。。</p>
-<p>​    花了两天吧，主要是配置网站的主题，一开始接触next主题的配置还真挺无从下手的，而且老是出bug，中间重新来了几次，哭死 T T，付出的努力和时间也不是白费的，对hexo的 使用，next主题的配置还是摸了个大概，日后慢慢玩，有的是时间调教它，不过想想中间碰到的几个bug，还真是欲哭无泪。。。</p>
-<p>​    就先这样吧，谨以此开篇记录 “清河的Blog” 的出生。。。</p>
+    <title>关于SSH</title>
+    <url>/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/</url>
+    <content><![CDATA[<img src="/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/SSH.jpg" alt="SSH" style="zoom:80%;">
+
+<span id="more"></span>
+
+<h1 id="什么是SSH？"><a href="#什么是SSH？" class="headerlink" title="什么是SSH？"></a>什么是SSH？</h1><p>​    <strong>Secure Shell</strong> (安全外壳协议，简称<strong>SSH</strong>) 是一种加密的 <strong>网络传输协议</strong>，目的是实现<strong>安全远程登陆</strong>以及其它<strong>安全网络服务</strong></p>
+<blockquote>
+<p>SSH仅仅是一项<strong>协议标准</strong>，其具体的实现有很多，既有开源实现的OPenSSH，也有商业实现方案，使用最广泛的当然是开源实现的OpenSSH</p>
+</blockquote>
+<br>
+
+<p>​    如果一个用户使用SSH协议登录另一台远程计算机，我们就可以认为这种登录是安全的，最早的时候计算机之间的通信都是明文通信，即没有经过加密，一旦被截获信息就暴露无疑，1995年芬兰赫尔辛基理工大学的研究员Tatu Ylönen设计了ssh协议的第一个版本，同年七月份，以免费软件的形式发布了这个协议的一个实现，迅速流行起来</p>
+<br>
+
+<br>
+
+<h1 id="SSH实现原理"><a href="#SSH实现原理" class="headerlink" title="SSH实现原理"></a>SSH实现原理</h1><blockquote>
+<p>预备知识：密码学</p>
+</blockquote>
+<p>​    SSH采用非对称加密方式，进行加密登录和传输，要进行传输首先就要 <strong>建立通信/登录</strong> ，SSH建立连接主要有两种方式</p>
+<br>
+
+<br>
+
+<h2 id="基于口令认证"><a href="#基于口令认证" class="headerlink" title="基于口令认证"></a>基于口令认证</h2><p>​    实际上是对sever端的公钥或者指纹进行确认，确认建立连接时的公钥或者指纹是属于你要连接的那个主机的，而不是黑客替换成的自己的公钥（即中间人攻击），流程如下：</p>
+<p>​    </p>
+<img src="/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/Token_Authentication.webp" alt="Token_Authentication">
+
+<ol>
+<li><p>远程Server收到Client端用户TopGun的登录请求，Server把自己的公钥发给用户。</p>
+</li>
+<li><p>Client使用这个公钥，将密码进行加密。</p>
+</li>
+<li><p>Client将加密的密码发送给Server端。</p>
+</li>
+<li><p>远程Server用自己的私钥，解密登录密码，然后验证其合法性。</p>
+</li>
+<li><p>若验证结果，给Client相应的响应。</p>
+<br>
+
+<p>可以看到，直接采用非对称加密建立连接的过程，并不安全，因为你无法确保TopGun收到的公钥来自于Sever端，比如上文提到的中间人攻击：</p>
+<img src="/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/Middle_Hacker.webp" alt="Middle_Hacker">
+
+<p>​    中间人通过这种方式可以轻易的获取你的账号密码并冒充你登录服务端，即所谓中间人攻击，那么如何避免这种情况的发生呢？就是我们所说的 <strong>基于口令的认证</strong> </p>
+<br>
+
+<p>​    第一次登陆时，系统会出现类似下面的提示信息：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">   The authenticity of host <span class="string">&#x27;ssh-server.example.com (12.18.429.21)&#x27;</span> can<span class="string">&#x27;t be established.</span></span><br><span class="line"><span class="string">   RSA key fingerprint is 98:2e:d7:e0:de:9f:ac:67:28:c2:42:2d:37:16:58:4d.</span></span><br><span class="line"><span class="string">Are you sure you want to continue connecting (yes/no)? </span></span><br></pre></td></tr></table></figure>
+
+<p>意思是“无法确认主机ssh-server.example.com（12.18.429.21）的真实性，不过知道它的公钥指纹，是否继续连接？”</p>
+<blockquote>
+<p>所谓公钥指纹，其实就是将公钥进行hash生成的一个128位的序列，用这个序列就可以代表公钥，因为具有唯一性，不会重复，所以称之为指纹(fingerprint)</p>
+<p>为什么不用公钥，反倒要生成一个指纹代替？</p>
+<p>主要是公钥位数比较长，向rsa算法生成的公钥有1024位，比较起来不方便，由于指纹位数比较少，而且不同的公钥生成的指纹不会重复，具有唯一性，所以用指纹代替</p>
+</blockquote>
+<br>
+
+<p>现在又有疑问了，你怎么知道这个指纹是不是属于目标主机而不是中间人的呢？</p>
+</li>
+</ol>
+<blockquote>
+<p>实际上，这个没有什么好办法，远程主机必须在自己的网站上贴出自己的公钥指纹，以便用户自行核对，从而确定目标主机的身份，允许进行连接</p>
+</blockquote>
+<br>
+
+<p>如果输入yes后，会出现下面的信息：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Warning: Permanently added &#x27;ssh-server.example.com,12.18.429.21&#x27; (RSA) to the list of known hosts. </span><br><span class="line">Password: (enter password)</span><br></pre></td></tr></table></figure>
+
+<p>​    即该host已被确认，并被追加到know_hosts中，然后需要输入密码，后面的流程就如第一幅图所示了</p>
+<img src="/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/Token_Authentication.webp" alt="Token_Authentication">
+
+<blockquote>
+<p>​    关于known_hosts文件，它记录的就是你连接过并且信赖的主机，这样当你下次再进行连接时，就不需要再次询问你是否信任该主机并进行连接了，而是直接让你输入密码进行登录</p>
+</blockquote>
+<br>
+
+<br>
+
+<br>     
+
+<h2 id="基于公钥认证"><a href="#基于公钥认证" class="headerlink" title="基于公钥认证"></a>基于公钥认证</h2><blockquote>
+<p>​    如果是根据口令进行认证，每一次登录都需要输入密码，一般登录主机都需要密码进行身份验证，确保你是主机的用户，或者其它利用ssh方式进行登录的网站，会要求你账号和密码都要输入，这样每一次登录就比较烦，都要输入账号密码才可以，但是接下来介绍的<strong>基于公钥认证</strong>就不需要这么麻烦</p>
+</blockquote>
+<p>流程如下：</p>
+<img src="/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/PubKey_Authentication.webp" alt="PubKey_Authentication">
+
+<ol>
+<li>Client将自己的公钥存放在Server上，追加在文件authorized_keys中。</li>
+<li>Server端接收到Client的连接请求后，会在authorized_keys中匹配到Client的公钥pubKey，并生成随机数R，用Client的公钥对该随机数进行加密得到pubKey(R)<br>，然后将加密后信息发送给Client。</li>
+<li>Client端通过私钥进行解密得到随机数R，然后对随机数R和本次会话的SessionKey利用MD5生成摘要Digest1，发送给Server端。</li>
+<li>Server端会也会对R和SessionKey利用同样摘要算法生成Digest2。</li>
+<li>Server端会最后比较Digest1和Digest2是否相同，完成认证过程。    </li>
+</ol>
+<p>​    </p>
+<p>​    简单说就是，就是用户将自己的公钥储存在远程主机上。登录的时候，远程主机会向用户发送一段随机字符串，用户用自己的私钥加密后，再发回来。远程主机用事先储存的公钥进行解密，如果成功，就证明用户是可信的，直接允许登录，不再要求密码。  </p>
+<p>​    这样就不会有问题了，因为公钥是公开的，即使被别人截获也没有问题，因为实际上用户是通过私钥来证明自己的身份的，因为只有私钥才可以解开用公钥进行加密的随机字符串</p>
+<br>    
+
+<p>​    下面是将自己的公钥设置在Github上的展示：</p>
+<img src="/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/Set_PubKey.webp" alt="Set_PubKey">
+
+
+
+<br>
+
+<br>
+
+<br>
+
+<br>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.jianshu.com/p/33461b619d53">图解SSH原理</a>——————</p>
 ]]></content>
       <categories>
-        <category>日志</category>
+        <category>技术相关</category>
       </categories>
       <tags>
-        <tag>日志</tag>
+        <tag>SSH</tag>
       </tags>
   </entry>
   <entry>
     <title>数字签名</title>
-    <url>/2020/12/25/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</url>
-    <content><![CDATA[<p><img src="/2020/12/25/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/Sign.gif" alt="Sign"></p>
+    <url>/2020/12/25/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</url>
+    <content><![CDATA[<p><img src="/2020/12/25/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/Sign.gif" alt="Sign"></p>
 <span id="more"></span>
 
 <blockquote>
@@ -361,7 +358,7 @@
 <h2 id="数字签名的过程"><a href="#数字签名的过程" class="headerlink" title="数字签名的过程"></a>数字签名的过程</h2><p>(1)将报文按双方约定的HASH算法计算得到一个固定位数的报文摘要。在数学上保证：只要改动报文中任何一位，重新计算出的报文摘要值就会与原先的值不相符。这样就保证了报文的不可更改性。</p>
 <p>(2)将该报文摘要值用发送者的私人密钥加密，然后连同原报文一起发送给接收者，而产生的报文即称数字签名。这样就保证了签发者不可否认性。</p>
 <p>(3)接收方收到数字签名后，用同样的HASH算法对报文计算摘要值，然后与用发送者的公开密钥进行解密解开的报文摘要值相比较。如相等则说明报文确实来自所称的发送者。</p>
-<img src="/2020/12/25/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/datasign.webp" alt="数字签名">
+<img src="/2020/12/25/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/datasign.webp" alt="数字签名">
 
 ]]></content>
       <categories>
@@ -372,31 +369,18 @@
       </tags>
   </entry>
   <entry>
-    <title>草稿自留</title>
-    <url>/2020/12/25/%E8%8D%89%E7%A8%BF%E8%87%AA%E7%95%99/</url>
-    <content><![CDATA[<p>存放一些待使用的摘抄<span id="more"></span></p>
-<h3 id="什么是pki"><a href="#什么是pki" class="headerlink" title="什么是pki"></a>什么是pki</h3><ul>
-<li>PKI 就是 Public Key Infrastructure 的缩写，翻译过来就是公开密钥基础设施。<strong>它是利用公开密钥技术所构建的，解决网络安全问题的，普遍适用的一种基础设施。</strong>美国政府的一个报告中把 PKI 定义为全面解决安全问题的基础结构，从而大大扩展了 PKI 的概念。而我们认为，<code>采用了公开密钥技术的基础设施就可以称为 PKI 。</code>公开密钥技术也就是利用非对称算法的技术。说 PKI 是基础设施，就意味着它对信息网络的重要。将 PKI 在网络信息空间的地位与电力基础设施在工业生活中的地位进行类比非常确切。电力系统，通过伸到用户的标准插座为用户提供能源。 PKI 通过延伸到用户本地的接口，为各种应用提供安全的服务，如认证、身份识别、数字签名、加密等。从概念上讲，如果离开使用 PKI 的应用系统， PKI 本身没有任何实际的用处，正如电力系统离开电器设备也没有用一样。有了 PKI ，安全应用程序的开发者不用再关心那些复杂的数学运算和模型，而直接按照标准使用一种插座（接口）。用户也不用关心如何进行对方的身份鉴别而可以直接使用标准的插座，正如在电力基础设施上使用电吹风一样。</li>
-<li><code>PKI 中最基本的元素就是数字证书。</code>所有安全的操作主要通过证书来实现。 PKI 的硬设备还包括签置这些证书的证书机构 (<strong>CA</strong>) ，登记和批准证书签置的登记机构 (<strong>RA</strong>) ，以及存储和发布这些证书的<strong>电子目录</strong>。 PKI 中还包括证书策略，证书路径以及证书的使用者。所有这些都是 PKI 的基本元素。许多这样的基本元素有机地结合在一起就构成了 PKI 。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>草稿</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数字证书是什么</title>
-    <url>/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/</url>
-    <content><![CDATA[<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/CA.png" alt="CA"></p>
+    <url>/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/</url>
+    <content><![CDATA[<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/CA.png" alt="CA"></p>
 <p>数字证书是一种在网络世界中用来验证身份的数字标识，个人，组织，机构在网络上进行交易或者提交账号密码时，需要认证对方是不是真的是你想要进行交流的对象，而不是骇客假冒的，从而避免交易信息，账号密码信息等被骇客窃取<span id="more"></span></p>
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="数字证书-CA-是什么"><a href="#数字证书-CA-是什么" class="headerlink" title="数字证书(CA)是什么"></a>数字证书(CA)是什么</h2><p>数字证书从本质上来说是一种电子文档，由<strong>证书授权中心(以下简称为<a href="https://baike.baidu.com/item/CA%E4%B8%AD%E5%BF%83/6471855">CA中心</a>）</strong>所颁发的一种较为权威与公正的证书</p>
 <p>用于确定网络上的个人，计算机和其它实体的真实身份，是在互联网通讯中标识通讯各方身份信息的一个数字认证，由于互联网的虚拟性，你无法确定和你进行交易的对象是否是你想要交易的对象，而不是黑客假冒的，举个栗子：</p>
 <p>​        <code>比如有人盗了你朋友的QQ号，假装你的朋友向你借钱，由于你无法确定对话那头是你朋友还是盗号的人，所以你可能会选择视频或者语音的方式来确认他的身份，从而知道向你借钱的不是你的朋友，而是黑客</code> </p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Fake_Sever.jpg" alt="Fake_Sever"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Fake_Sever.jpg" alt="Fake_Sever"></p>
 <p>其中，数字证书的作用就和你通过视频或者语音的方式来确认对方身份时的作用一样，用来确保对方的真实身份，不同的是，现实世界是通过身份证，长相，声音进行判断，网络则是通过数字证书进行判断</p>
 <p>因此，简单来说数字证书就是<strong>“网络实体”的身份证</strong>，是用来在网络世界向对方证明 “你是谁” 的凭证</p>
 <p>先对证书长什么样有个大概印象：</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Win_Certification.jpg" alt="Win_Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Win_Certification.jpg" alt="Win_Certification"></p>
 <p>正如首句所说，本质上是一种具有规定格式和内容的电子文档，此文档具有公信力，（举个栗子这么说）可以通过数字证书证明此Windows是微软公司的产品，不是别人假冒编写的盗版，也不是经过别人修改过的版本，是正规的。</p>
 <p>（其实你每次下载的软件安装包也会包含它自己的数字证书和数字签名，如果数字签名正常就说明软件安装包正常，没有被黑客修改过，栗子往下看）</p>
 <h2 id="数字证书的原理"><a href="#数字证书的原理" class="headerlink" title="数字证书的原理"></a>数字证书的原理</h2><blockquote>
@@ -409,7 +393,7 @@
 <p>（证书的产生：认证中心把用户证书的基本信息做哈希算法，然后用自己的私钥对哈希值进行加密，生成签名,最后形成一个具有如下格式的电子文档）</p>
 <p>![数字证书](./数字证书是什么/digital certificate.webp)</p>
 <p>显然，到这里数字证书就生成了，但是有一个问题，按道理数字证书的格式应该都是一样的，那么CA中心的数字证书由谁来进行颁发和认证呢？</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/self-signed-certificate.jpg"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/self-signed-certificate.jpg"></p>
 <p>这种采用证书中的公钥对应的私钥进行签名的证书被称为自签名证书，意思是签名者和证书拥有者为同一人。您自己可以成为CA并颁发自己的证书，这些证书称为自签名证书，但出于商业目的，您的自签名证书将不受信任。只有已建立且知名的CA自签名证书才是可信的。CA的根证书始终是自签名的。</p>
 <h2 id="数字证书的作用"><a href="#数字证书的作用" class="headerlink" title="数字证书的作用"></a>数字证书的作用</h2><p>​    是  为  了  <strong>安  全 ！！</strong> </p>
 <h3 id="电子商务"><a href="#电子商务" class="headerlink" title="电子商务"></a>电子商务</h3><p>​    代表性的栗子就是 <strong>电子商务</strong> ，基于互联网的电子商务系统技术使网上购物的顾客可以轻松获得 商家和企业的信息，但同时也增加了对某些敏感或有价值的数据被盗取和滥用的风险，比如最简单的账号密码订单等等。</p>
@@ -419,20 +403,20 @@
 <p>​    CA中心采用的是以数字加密技术为核心的数字证书认证技术，通过数字证书，CA中心可以对互联网上所传输的各种信息进行加密、解密、数字签名与签名认证等各种处理，同时也能保障在数字传输的过程中不被不法分子所侵入，或者即使受到侵入也无法查看其中的内容。</p>
 <p>​    <strong>简而言之，确保在网上进行交易时，交易的对象是真实存在的并且是你想要进行交易的对象，而不是假冒的，由CA中心来为你担保，持有CA证书的人就是你交易的对象</strong> </p>
 <h3 id="验证网站是否可信（仅针对HTTPS）"><a href="#验证网站是否可信（仅针对HTTPS）" class="headerlink" title="验证网站是否可信（仅针对HTTPS）"></a>验证网站是否可信（仅针对HTTPS）</h3><p>通常，我们如果访问某些敏感的网页（比如用户登录的页面），其协议都会使用 HTTPS 而不是 HTTP。因为 HTTP 协议是明文的，一旦有坏人在偷窥你的网络通讯，他/她就可以看到网络通讯的内容（比如你的密码、银行帐号、等）；而 HTTPS 是加密的协议，可以保证你的传输过程中，坏蛋无法偷窥。<br>　　但是，千万【不要】以为，HTTPS 协议有了加密，就可高枕无忧了。俺再举一个例子来说明，光有加密是不够滴。假设有一个坏人，搞了一个假的网银的站点，然后诱骗你上这个站点。假设你又比较单纯，一不留神，就把你的帐号，口令都输入进去了。那这个坏蛋的阴谋就得逞鸟。<br>　　为了防止坏人这么干，HTTPS 协议除了有加密的机制，还有一套证书的机制。通过证书来确保，某个站点确实就是某个站点。<br>　　有了证书之后，当你的浏览器在访问某个 HTTPS 网站时，会验证该站点上的 CA 证书（类似于验证介绍信的公章）。如果浏览器发现该证书没有问题（证书被某个根证书信任、证书上绑定的域名和该网站的域名一致、证书没有过期），那么页面就直接打开；否则的话，浏览器会给出一个警告，告诉你该网站的证书存在某某问题，是否继续访问该站点？为了形象起见，下面给出 IE 和 Firefox 的抓图：</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/IE_Certification.png" alt="IE_Certification"></p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Certification.png" alt="Firefox_Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/IE_Certification.png" alt="IE_Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Certification.png" alt="Firefox_Certification"></p>
 <p>大多数知名的网站，如果用了 HTTPS 协议，其证书都是可信的（也就不会出现上述警告）。所以，今后你如果上某个知名网站，发现浏览器跳出上述警告，你就要小心啦！</p>
 <h3 id="验证某文件是否可信（是否被篡改）"><a href="#验证某文件是否可信（是否被篡改）" class="headerlink" title="验证某文件是否可信（是否被篡改）"></a>验证某文件是否可信（是否被篡改）</h3><p>证书除了可以用来验证某个网站，还可以用来验证某个文件是否被篡改。具体是通过证书来制作文件的数字签名。制作数字签名的过程太专业，咱就不说了。后面专门告诉大家如何验证文件的数字签名。考虑到大多数人用 Windows 系统，俺就拿 Windows 的例子来说事儿。<br>　　比如，俺手头有一个 Firefox 的安装文件（带有数字签名）。当俺查看该文件的属性，会看到如下的界面。眼神好的同学，会注意到到上面有个“<strong>数字签名</strong>”的标签页。如果没有出现这个标签页，就说明该文件没有附带数字签名。</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_Files.png" alt="Firefox_Setup_Files"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_Files.png" alt="Firefox_Setup_Files"></p>
 <p>选择该标签页，看到如下界面。<br>　　顺便说一下，某些数字签名中没有包含“邮件地址”，那么这一项会显示“不可用”；同样的，某些数字签名没有包含“时间戳”，也会显示“不可用”。不要紧张，这里显示的“不可用”跟数字签名的有效性【没关系】。</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_more.png" alt="Firefox_Setup_more"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_more.png" alt="Firefox_Setup_more"></p>
 <p>一般来说，签名列表中，有且仅有一个签名。选中它，点“<strong>详细信息</strong>”按钮。跳出如下界面：<br>　　通常这个界面会显示一行字：“该数字签名正常”（图中红圈标出）。如果有这行字，就说明该文件从出厂到你手里，中途没有被篡改过（是原装滴、是纯洁滴）。</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_normal_Certification.png" alt="Firefox_Setup_normal_Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_normal_Certification.png" alt="Firefox_Setup_normal_Certification"></p>
 <p>如果该文件被篡改过了（比如，感染了病毒、被注入木马），那么对话框会出现一个警告提示“<strong>该数字签名无效</strong>”（图中红圈标出）。界面如下：</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_innormal_Certification.png" alt="Firefox_Setup_innormal_Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_innormal_Certification.png" alt="Firefox_Setup_innormal_Certification"></p>
 <p>不论签名是否正常，你都可以点“查看证书”按钮。这时候，会跳出证书的对话框。如下：</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification.png" alt="Certification"></p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification_more.png" alt="Certification_more"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification.png" alt="Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification_more.png" alt="Certification_more"></p>
 <p>从后一个界面，可以看到俺刚才说的证书信任链。图中的信任链有3层：<br>第1层是根证书（Thawte Premium Server CA）<br>第2层是 Thawte 专门用来签名的证书<br>第3层是 Mozilla 自己的证书</p>
 <p>　　目前大多数知名的公司（或组织机构），其发布的可执行文件（比如软件安装包、驱动程序、安全补丁），都带有数字签名。你可以自己去看一下。<br>　　建议大伙儿在安装软件之前，都先看看是否有数字签名？如果有，就按照上述步骤验证一把。一旦数字签名是坏的，那可千万别装。</p>
 <h2 id="数字证书由谁颁发"><a href="#数字证书由谁颁发" class="headerlink" title="数字证书由谁颁发"></a>数字证书由谁颁发</h2><p>数字证书由<strong>证书授权中心(CA中心)<strong>或者认证中心的</strong>“下级认证CA中心”</strong>颁发，CA中心是能向用户签发数字证书以确认用户身份的管理机构，也是数字证书发行的唯一机构，它在数字证书发行中充当担保的角色<del>（认证中心的公共密钥必须是可靠的，认证中心必须公布其公共密钥或由更高级别的认证中心提供一个电子凭证来证明其公共密钥的有效性，后一种方法导致了多级别认证中心的出现）</del></p>
@@ -446,7 +430,7 @@
 <p>到这里，你可能会想，TMD，那我们自己就不能发布证书吗？就一定要花钱去申请？当然不是，我们自己也可以成立证书发布机构，但是需要通过一些安全认证等等，只是有点麻烦。另外，如果数字证书只是要在公司内部使用，公司可以自己给自己生成一个证书，在公司的所有机器上把这个证书设置为操作系统信任的证书发布机构的证书(这句话仔细看清楚，有点绕口)，这样以后公司发布的证书在公司内部的所有机器上就可以通过验证了(在发布证书时，把这些证书的Issuer(发布机构)设置为我们自己的证书发布机构的证书的Subject(主题)就可以了)。但是这只限于内部应用，因为只有我们公司自己的机器上设置了信任我们自己这个所谓的证书发布机构，而其它机器上并没有事先信任我们这个证书发布机构，所以在其它机器上，我们发布的证书就无法通过安全验证。</p>
 </blockquote>
 <h2 id="数字证书的内容"><a href="#数字证书的内容" class="headerlink" title="数字证书的内容"></a>数字证书的内容</h2><p>下图显示了X.509版本3证书的内容：</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/x509v3.gif" alt="单层数字证书"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/x509v3.gif" alt="单层数字证书"></p>
 <p>X.509版本3证书支持自X.509版本1以来支持的以下字段：</p>
 <ul>
 <li><p>***主题***：提供CA颁发证书的计算机，用户，网络设备或服务的名称。主题名称通常使用X.500或轻量级目录访问协议（LDAP）格式表示。</p>
@@ -475,16 +459,16 @@
 <li><em>证书策略：</em> 描述组织在颁发证书之前验证证书请求者身份所采取的措施。OID用于表示验证过程，并且可以包括策略限定的URL，该URL完整地描述了验证身份所采取的措施。</li>
 </ul>
 <h2 id="数字证书的结构"><a href="#数字证书的结构" class="headerlink" title="数字证书的结构"></a>数字证书的结构</h2><p>CA在结构上是分层的。通常有三种类型的层次结构，它们由层数表示，也有三层以上的，至于为什么要这么多层，无非是安全和方便管理CA</p>
-<h4 id="单层-单层层次结构"><a href="#单层-单层层次结构" class="headerlink" title="单层/单层层次结构"></a>单层/单层层次结构</h4><p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-1.png" alt="单层数字证书"></p>
+<h4 id="单层-单层层次结构"><a href="#单层-单层层次结构" class="headerlink" title="单层/单层层次结构"></a>单层/单层层次结构</h4><p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-1.png" alt="单层数字证书"></p>
 <p>单层层次结构由一个CA组成。单个CA既是根CA又是颁发CA. 根CA是PKI的信任锚的术语。信任根CA的任何应用程序，用户或计算机都信任CA层次结构颁发的任何证书。颁发CA是向最终实体颁发证书的CA. 出于安全原因，这两个角色通常是分开的。使用单层层次结构时，它们将合并在一起。</p>
-<h4 id="两层层次结构"><a href="#两层层次结构" class="headerlink" title="两层层次结构"></a>两层层次结构</h4><p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-2.png" alt="两层数字证书"></p>
+<h4 id="两层层次结构"><a href="#两层层次结构" class="headerlink" title="两层层次结构"></a>两层层次结构</h4><p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-2.png" alt="两层数字证书"></p>
 <p>双层层次结构是最常见的。在某些方面，它是一层和三层等级之间的折衷。在此设计中，有一个脱机的根CA，以及一个在线的从属颁发CA. 由于根CA和颁发CA角色是分开的，因此安全级别会提高。但更重要的是，根CA处于脱机状态，因此可以更好地保护根CA的私钥免受攻击。它还提高了可扩展性和灵活性。这是因为可以存在多个从根CA到CA的颁发CA. 这可以让你有CA在不同的地理位置，以及与不同的安全级别。 </p>
-<h4 id="三层层次结构"><a href="#三层层次结构" class="headerlink" title="三层层次结构"></a>三层层次结构</h4><p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-3.png" alt="三层数字证书"></p>
+<h4 id="三层层次结构"><a href="#三层层次结构" class="headerlink" title="三层层次结构"></a>三层层次结构</h4><p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-3.png" alt="三层数字证书"></p>
 <p>具体而言，两层层次结构之间的区别在于第二层位于根CA和颁发CA之间。此CA的放置可能有几个不同的原因。第一个原因是将第二层CA用作策略CA，换句话说，策略CA配置为向 “颁发CA” 颁发证书，该证书受其颁发的证书类型的限制。策略CA也可以仅用作管理边界。换句话说，您只从“策略CA”的下属颁发某些证书，并在颁发证书之前执行某种级别的验证，但该策略仅从管理而非技术角度强制执行。</p>
 <p>添加第二层的另一个原因是，如果由于密钥泄露而需要撤销多个CA，则可以在第二层级别执行它，从而使其他“从根分支”可用。应该注意的是，此层次结构中的第二层CA可以像Root一样保持脱机状态。</p>
 <h4 id="信任链"><a href="#信任链" class="headerlink" title="信任链"></a>信任链</h4><p>由于CA的多层结构，会产生信任链</p>
 <p>当您从商业CA（也就是要求具有公信力的CA中心）获得公钥证书时，您的证书将与证书链相关联，或者有时称为信任链。链中的证书数量取决于CA的层次结构。下图显示了双层CA的证书链。所有者/用户证书由颁发CA签名，颁发CA证书由根CA签名。根CA的证书是自签名的。</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.gif" alt="信任链"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.gif" alt="信任链"></p>
 <p>在用户通过浏览器或程序验证证书期间，浏览器需要通过查找上一个颁发CA或中间CA的公钥来验证签名。该过程将继续，直到达到根证书。根CA是自签名的，最后必须由浏览器信任。浏览器将所有知名的CA根证书保存在其信任库中。</p>
 <p>浏览器的信任库中只会存有知名的根CA，颁发CA或者中间CA不会放在信任库中，因此浏览器在验证时，由下自上一直找到根CA，确保根CA是可信任的即可验证安全</p>
 <p><strong>其实多层次的CA结构中，颁发CA或中间CA的出现是为了根CA的安全和方便CA的管理，有了颁发CA或者中间CA，根CA可以脱机管理，从而保证根CA的私钥安全</strong></p>
@@ -494,7 +478,7 @@
 <p>终端实体证书(要验证的数字证书)的信任从证书路径回溯，通过从属 CA 直到根 CA。向 Web 浏览器或其他客户端呈现了终端实体证书时，它会尝试构建信任链。例如，它可能会检查证书的<em>颁发者可分辨名称</em> 和<em>主题可分辨名称</em> 是否与颁发 CA 证书的相应字段匹配。匹配将在层次结构上的每个后续级别继续进行，直到客户端到达其信任存储中包含的受信任根。</p>
 <p>信任存储是浏览器或操作系统包含的受信任 CA 的库。对于私有 PKI，组织的 IT 部门必须确保每个浏览器或系统之前已将私有根 CA （即私人团体和组织自建的CA中心的自签名数字证书）添加到其信任存储中。否则将无法验证证书路径，导致客户端错误。</p>
 <p>下图显示了在向浏览器提供终端实体 X.509 证书时，浏览器遵循的验证路径。请注意，终端实体证书缺乏签名颁发机构，仅用于对拥有该证书的实体进行身份验证。</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.png" alt="信任链"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.png" alt="信任链"></p>
 <p>浏览器检查终端实体证书。浏览器发现证书提供了来自从属 CA（级别 3）的签名作为其信任凭证。从属 CA 的证书必须包含在同一 PEM 文件中。或者，它们也可以位于包含构成信任链的证书的单独文件中。找到这些内容后，浏览器会检查从属 CA（级别 3）的证书，并发现它提供了来自从属 CA（级别 2）的签名。接下来，从属 CA（级别 2）提供了来自根 CA（级别 1）的签名作为其信任凭证。如果浏览器发现其信任存储中预装的私有根 CA 证书的副本，它会确认终端实体证书可信</p>
 <p>通常，浏览器还会根据证书吊销列表 (CRL) 检查每个证书。已过期、已吊销或配置错误的证书将被拒绝，验证失败</p>
 <h2 id="数字证书的分类"><a href="#数字证书的分类" class="headerlink" title="数字证书的分类"></a>数字证书的分类</h2><figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">从证书的用途来看，数字证书可分为<span class="strong">**签名证书**</span>和<span class="strong">**加密证书**</span>。签名证书主要用于对用户信息进行签名，以保证信息完整性和行为的不可抵赖；加密证书主要用于对用户传送信息进行加密，以保证信息的机密性。</span><br></pre></td></tr></table></figure>
@@ -503,13 +487,13 @@
 
 <h3 id="签名证书"><a href="#签名证书" class="headerlink" title="签名证书"></a>签名证书</h3><p> 签名时使用，仅仅用来验证身份使用，其公钥和私钥均由A自己产生，并且由自己保管，CA不负责其保管任务。</p>
 <p>CA负责的仅仅是给你颁发一个签名证书，证书里面包含有你的身份信息和用于验证的公钥（公钥就是你自己生成的密钥对里的那个公钥，CA不会给你生成），这样当别人验证签名(验签)时，可以通过数字证书来确认你是不是本人</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetSignKey.jpg" alt="签名证书"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetSignKey.jpg" alt="签名证书"></p>
 <h3 id="加密证书"><a href="#加密证书" class="headerlink" title="加密证书"></a>加密证书</h3><p>加密证书在传递加密数据时使用，其私钥和公钥由CA产生，并由CA保管（存根）。</p>
 <p>注意，加密证书的密钥对不是由你自己生成的，而是由CA产生（实际上不是CA，是KMC产生后交给CA），产生之后，将加密证书连同密钥对交给你，也就是说，加密密钥对在CA那边会存根一份，你自己保留一份，加密证书中存放的就是密钥对中的公钥，私钥不能外流</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetEncriptionKey.jpg" alt="加密证书"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetEncriptionKey.jpg" alt="加密证书"></p>
 <p>这是割裂开的两个申请流程，实际上加密证书和签名证书可以同时申请，一个流程搞定</p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications.jpg" alt="双证书申请"></p>
-<p><img src="/2020/12/24/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications2.jpg" alt="双证书申请"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications.jpg" alt="双证书申请"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications2.jpg" alt="双证书申请"></p>
 <p>PKI中使用双证书、即双密钥，双密钥是指签名密钥对与加密密钥对，从本质上说，两个密钥对都是非对称密钥对，因此，都可以用来作非对称加解密，然而为什么需要双密钥呢？这必须从两个密钥的用法说起。<br>签名密钥对用于数据的完整性检测，保证防伪造与防抵赖，签名私钥的遗失，并不会影响对以前签名数据的验证，因此，签名私钥无须备份，因此，签名密钥不需要也不应该需要第三方来管理，完全由持有者自己产生；而加密密钥对用于数据的加密保护，若加密私钥遗失，将导致以前的加密数据无法解密，这在实际应用中是无法接受的，加密私钥应该由可信的第三方（即通常所说的CA）来备份，以保证加密数据的可用性，因此，加密密钥对可以由第三方来产生，并备份。<br>由于签名密钥与加密密钥的使用与管理上的不同，决定了双证书使用的合理性与必然性</p>
 <br>
 
@@ -540,5 +524,30 @@
         <tag>数字证书</tag>
         <tag>CA</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>建站伊始</title>
+    <url>/2020/12/22/diaries/%E5%BB%BA%E7%AB%99%E4%BC%8A%E5%A7%8B/</url>
+    <content><![CDATA[<p>​    其实很久之前就想拥有一个属于自己的博客了，但是由于时间关系加本身是个计算机方面的小白，就一直停留在念想当中。。。<span id="more"></span></p>
+<p>​    在此之前，我对于网站的架构一直停留在 html，css，js，source，index 这种简单的印象里，无非是写一些html，引用source文件夹里的各种vedio，audio，img资源，通过css和js美化，然后发布到网站上去，之前也有一个尝试，花10块钱在一个网站上买了个小域名，还附送了100M的空间，暑假里和家人去旅游的时候，我把旅游的全程计划写成了一堆html文件，然后网上找了个网站模板，文件结构理清之后用flashfxp往远程主机里一传，还真弄出了个有模有样的小网站，当时也挺高兴的，毕竟头一次能够在网上检索出自己的东西，其实要是真的就那样搞个网站也不是不可，文件结构简单，自己还清楚，引用的资源基本也都是主机资源，这点因为我不太相信使用在线图床这种服务，之前貌似有个挺大的图床关掉了，那段时间在网上就经常看到有一些文章的图片都无法正常显示，而且平时浏览网站，也会出现一些图片无法加载的情况，让我很是恼火，对于自己写的东西，我是万万不能容忍有这种情况发生的，所以我的文件一般都是本地引用，当然肯定是有得必有失，就是主机空间消耗过多，这个问题以后再说吧，车到山前必有路。。。</p>
+<p>​    恰逢这段时间没什么课，一直学习还挺累的，也没啥意思，趁休息的时候又捡起了html，css相关的课程知识，建一个自己的博客这个想法又从脑子里冒了出来，闲着也是闲着，开整呗。。。</p>
+<p>​    花了两天吧，主要是配置网站的主题，一开始接触next主题的配置还真挺无从下手的，而且老是出bug，中间重新来了几次，哭死 T T，付出的努力和时间也不是白费的，对hexo的 使用，next主题的配置还是摸了个大概，日后慢慢玩，有的是时间调教它，不过想想中间碰到的几个bug，还真是欲哭无泪。。。</p>
+<p>​    就先这样吧，谨以此开篇记录 “清河的Blog” 的出生。。。</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2021年6月15日</title>
+    <url>/2021/06/16/diaries/2021%E5%B9%B46%E6%9C%8815%E6%97%A5/</url>
+    <content><![CDATA[<p>​    为了实现单独的日记菜单，今天查了一天的教程，好在不负有心人，晚上的时候还是给我找到了解决方法，实现了日记的时间线形式，不过弄完之后又冒出来一个想法，就是能不能把日记整成像主页那样，一篇文章一个小板块，排列在中央区域的形式<span id="more"></span></p>
+<p>​    果然折腾的心是停不下来的，由于博客是在半年前建好的，建好之后写了没几篇文章，后来就再也没怎么动过，前段时间想在搞搞，发现hexo出了好多问题，让人头秃，逼不得已把博客重新建了一遍，还好写的文章都还在，就是之前个性化定制的好多东西都没了，站点提交，网页音乐播放，访问ip记录，书签，简历啥的都没了，不过也还行，现在搞了一遍之后，差不多越来越得心应手了，这些个性化配置等以后再搞吧，先稳定下来再说。</p>
+<p>​    另外，确实还有一些需要做的，就是有些文章写的还不是很完善，还需要改改，然后研究研究博客怎么在不同的设备上同步，不知道借助git好还是onedrive好，这段时间就忙这些吧</p>
+<p>​    今天就酱了，虽然感觉白忙活好多，但是欣慰的是想实现的功能还是实现了，十一点半了，晚安！</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
   </entry>
 </search>

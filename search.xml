@@ -665,4 +665,24 @@
         <tag>CA</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Hexo&amp;Next博客阅读文章出现404</title>
+    <url>/2021/06/17/posts/Hexo&amp;Next%E5%8D%9A%E5%AE%A2%E9%98%85%E8%AF%BB%E6%96%87%E7%AB%A0%E5%87%BA%E7%8E%B0404/</url>
+    <content><![CDATA[<p>​    今天刚刚写完关于自定义页面加时间线  的文章 ,本地调试没有问题之后，把博客部署到了github上，结果主页显示正常，一点文章标题或者阅读全文就跳转到404界面<span id="more"></span></p>
+<br>
+
+<p>​    <strong>解决办法：</strong>删掉或者剪切掉目前post的所有文章之后执行<code>hexo g</code> 和 <code>hexo d</code> ，然后再把文章 还原到post里再执行 <code>hexo g</code> 和<code> hexo d</code> ,即可解决</p>
+<br>
+
+<p>​    <strong>可能的原因：</strong>部署到github上，原来仓库里的链接，网页可能有失效没有删掉的，这样操作一通后，删掉了哪些无效的链接，网页，回归正常</p>
+]]></content>
+      <categories>
+        <category>技术相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
 </search>

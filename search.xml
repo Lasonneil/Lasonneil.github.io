@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2021年6月15日</title>
+    <url>/2021/06/16/diaries/2021%E5%B9%B46%E6%9C%8815%E6%97%A5/</url>
+    <content><![CDATA[<p>​    为了实现单独的日记菜单，今天查了一天的教程，好在不负有心人，晚上的时候还是给我找到了解决方法，实现了日记的时间线形式，不过弄完之后又冒出来一个想法，就是能不能把日记整成像主页那样，一篇文章一个小板块，排列在中央区域的形式<span id="more"></span></p>
+<p>​    果然折腾的心是停不下来的，由于博客是在半年前建好的，建好之后写了没几篇文章，后来就再也没怎么动过，前段时间想在搞搞，发现hexo出了好多问题，让人头秃，逼不得已把博客重新建了一遍，还好写的文章都还在，就是之前个性化定制的好多东西都没了，站点提交，网页音乐播放，访问ip记录，书签，简历啥的都没了，不过也还行，现在搞了一遍之后，差不多越来越得心应手了，这些个性化配置等以后再搞吧，先稳定下来再说。</p>
+<p>​    另外，确实还有一些需要做的，就是有些文章写的还不是很完善，还需要改改，然后研究研究博客怎么在不同的设备上同步，不知道借助git好还是onedrive好，这段时间就忙这些吧</p>
+<p>​    今天就酱了，虽然感觉白忙活好多，但是欣慰的是想实现的功能还是实现了，十一点半了，晚安！</p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+  </entry>
+  <entry>
     <title>2020-12-22小记</title>
     <url>/2020/12/23/diaries/2020-12-22%E5%B0%8F%E8%AE%B0/</url>
     <content><![CDATA[<p>​    历时三天，我的博客终算是小有模样了，这两天一共加了五个功能<span id="more"></span>，实现了 <strong>valine评论区</strong> ，<strong>博客全局音乐播放</strong>，<strong>天气插件</strong>，<strong>站点访问记录插件</strong>，还有一个就是<strong>站长功能设置</strong>啦，由于强迫症和心里洁癖，<strong>实现全局音乐播放</strong>的功能花了我不少时间，其实按网上教程来做着实不难，也就几步复制粘贴的事情，由于是初次接触，还想一口吃个胖子想要实现更加完美的功能，结果在配置一开始的时候连<code>Aplayer</code>和<code>Meting</code>的关系都没搞清楚，就在那硬调试，想想我还真是倔的可以，就这样眼高手低的事情没少做过，不过还可以啦，花费的时间也让我把它的特性摸了个大概，<code>hexo</code>的使用也熟练不少。。。</p>
@@ -25,6 +37,19 @@
 <p>​    另外，这三个月，谢谢你陪着我，我想我们也该到了结束的时候了，不管你是在玩还是什么，我确实付出了一些真的东西，从开心甜蜜到期待到失望，该体会的我也都体会了，我只想说，谢谢你。</p>
 <p>​    这三个月，谢谢指教啦！</p>
 <p>​    </p>
+]]></content>
+      <categories>
+        <category>日记</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>建站伊始</title>
+    <url>/2020/12/22/diaries/%E5%BB%BA%E7%AB%99%E4%BC%8A%E5%A7%8B/</url>
+    <content><![CDATA[<p>​    其实很久之前就想拥有一个属于自己的博客了，但是由于时间关系加本身是个计算机方面的小白，就一直停留在念想当中。。。<span id="more"></span></p>
+<p>​    在此之前，我对于网站的架构一直停留在 html，css，js，source，index 这种简单的印象里，无非是写一些html，引用source文件夹里的各种vedio，audio，img资源，通过css和js美化，然后发布到网站上去，之前也有一个尝试，花10块钱在一个网站上买了个小域名，还附送了100M的空间，暑假里和家人去旅游的时候，我把旅游的全程计划写成了一堆html文件，然后网上找了个网站模板，文件结构理清之后用flashfxp往远程主机里一传，还真弄出了个有模有样的小网站，当时也挺高兴的，毕竟头一次能够在网上检索出自己的东西，其实要是真的就那样搞个网站也不是不可，文件结构简单，自己还清楚，引用的资源基本也都是主机资源，这点因为我不太相信使用在线图床这种服务，之前貌似有个挺大的图床关掉了，那段时间在网上就经常看到有一些文章的图片都无法正常显示，而且平时浏览网站，也会出现一些图片无法加载的情况，让我很是恼火，对于自己写的东西，我是万万不能容忍有这种情况发生的，所以我的文件一般都是本地引用，当然肯定是有得必有失，就是主机空间消耗过多，这个问题以后再说吧，车到山前必有路。。。</p>
+<p>​    恰逢这段时间没什么课，一直学习还挺累的，也没啥意思，趁休息的时候又捡起了html，css相关的课程知识，建一个自己的博客这个想法又从脑子里冒了出来，闲着也是闲着，开整呗。。。</p>
+<p>​    花了两天吧，主要是配置网站的主题，一开始接触next主题的配置还真挺无从下手的，而且老是出bug，中间重新来了几次，哭死 T T，付出的努力和时间也不是白费的，对hexo的 使用，next主题的配置还是摸了个大概，日后慢慢玩，有的是时间调教它，不过想想中间碰到的几个bug，还真是欲哭无泪。。。</p>
+<p>​    就先这样吧，谨以此开篇记录 “清河的Blog” 的出生。。。</p>
 ]]></content>
       <categories>
         <category>日记</category>
@@ -96,114 +121,118 @@
       </tags>
   </entry>
   <entry>
-    <title>草稿自留</title>
-    <url>/2020/12/25/posts/%E8%8D%89%E7%A8%BF%E8%87%AA%E7%95%99/</url>
-    <content><![CDATA[<p>存放一些待使用的摘抄<span id="more"></span></p>
-<h3 id="什么是pki"><a href="#什么是pki" class="headerlink" title="什么是pki"></a>什么是pki</h3><ul>
-<li>PKI 就是 Public Key Infrastructure 的缩写，翻译过来就是公开密钥基础设施。<strong>它是利用公开密钥技术所构建的，解决网络安全问题的，普遍适用的一种基础设施。</strong>美国政府的一个报告中把 PKI 定义为全面解决安全问题的基础结构，从而大大扩展了 PKI 的概念。而我们认为，<code>采用了公开密钥技术的基础设施就可以称为 PKI 。</code>公开密钥技术也就是利用非对称算法的技术。说 PKI 是基础设施，就意味着它对信息网络的重要。将 PKI 在网络信息空间的地位与电力基础设施在工业生活中的地位进行类比非常确切。电力系统，通过伸到用户的标准插座为用户提供能源。 PKI 通过延伸到用户本地的接口，为各种应用提供安全的服务，如认证、身份识别、数字签名、加密等。从概念上讲，如果离开使用 PKI 的应用系统， PKI 本身没有任何实际的用处，正如电力系统离开电器设备也没有用一样。有了 PKI ，安全应用程序的开发者不用再关心那些复杂的数学运算和模型，而直接按照标准使用一种插座（接口）。用户也不用关心如何进行对方的身份鉴别而可以直接使用标准的插座，正如在电力基础设施上使用电吹风一样。</li>
-<li><code>PKI 中最基本的元素就是数字证书。</code>所有安全的操作主要通过证书来实现。 PKI 的硬设备还包括签置这些证书的证书机构 (<strong>CA</strong>) ，登记和批准证书签置的登记机构 (<strong>RA</strong>) ，以及存储和发布这些证书的<strong>电子目录</strong>。 PKI 中还包括证书策略，证书路径以及证书的使用者。所有这些都是 PKI 的基本元素。许多这样的基本元素有机地结合在一起就构成了 PKI 。</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>草稿</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>密码学</title>
-    <url>/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/</url>
-    <content><![CDATA[<p><img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/Password.jpg" alt="Password"></p>
-<span id="more"></span>
-
-<p>在密码学中，有一个五元组：{明文、密文、密钥、加密算法、解密算法}，对应的加密方案称为密码体制（或密码）</p>
-<p><strong>明文</strong>：是作为加密输入的原始信息</p>
-<p><strong>密文</strong>：是明文经加密变换后的结果，即消息被加密处理后的形式</p>
-<p><strong>密钥</strong>：是参与密码变换的参数，一切可能的密钥构成的有限集称为密钥空间</p>
+    <title>Hexo&amp;Next给自定义页面加时间线</title>
+    <url>/2021/06/16/posts/Hexo&amp;Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/</url>
+    <content><![CDATA[<p>​    昨天突然想开一个日记的栏目，所以给侧边栏的菜单项添加了一个 “日记” 选项，专门用于存放每天的记录，经过一天的折腾以后，终于成功了，以下是折腾过程<span id="more"></span></p>
 <br>
 
-<br>
+<h3>初次试验未能成功：</h3>
 
-<h2 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h2><p>加密和解密使用同一个密钥，主要算法包括：DES、3DES、RC2、RC4</p>
-<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/Symmetric-key algorithm.webp" alt="对称密钥算法">
-
-<p>例如：</p>
-<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/对称加密.jpeg" alt="对称加密">
-
-<br>
-
-<br>
-
-<h2 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a>非对称加密算法</h2><p>两个密钥同时产生：一把密钥（<strong>公钥</strong>）是公开的，任何人都可以得到。另一把密钥（<strong>私钥</strong>）只有密钥的拥有者知道</p>
-<p>用其中一把密钥（公钥或者是私钥）加密的信息，只能用另一把打开，主要算法包括：RSA算法，ECC（椭圆曲线）算法</p>
-<p>由已知的公钥几乎不可能推导出私钥，其实可以推出，按现在的计算机技术水平，要破解目前采用的1024位RSA密钥，需要上千年的计算时间，所以基本等于推不出来</p>
-<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm1.webp" alt="非对称密钥算法1">
-
-<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm2.webp" alt="非对称密钥算法2">
-
-<p>例如：</p>
-<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密.jpeg" alt="非对称加密" style="zoom:67%;">
-
-<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密2.jpeg" alt="非对称加密2" style="zoom:67%;">
-
-<br>
-
-<br>
-
-<h2 id="两种加密算法的区别与特点"><a href="#两种加密算法的区别与特点" class="headerlink" title="两种加密算法的区别与特点"></a>两种加密算法的区别与特点</h2><ul>
-<li><p><strong>对称加密</strong> 的加密和解密效率都要高于 <strong>非对称加密</strong> </p>
-<blockquote>
-<p>因此一般的做法是将报文用对称加密算法进行加密，然后将对称加密的密钥用非对称加密的公钥进行加密，发送出去，接收方使用私钥解密得到对称加密的密钥之后对报文进行解密</p>
-</blockquote>
+<ol>
+<li><p>首先先更改主题配置文件<code>config.next.yml</code> ,加入一行代码来添加日记选项</p>
 <br></li>
-<li><p><strong>对称加密</strong> 密钥分发困难，容易泄露，<strong>非对称加密</strong> 要安全许多</p>
-<blockquote>
-<p><strong>对称加密</strong> 的密钥在传递过程中一旦泄露，报文的安全性将不复存在</p>
-<p><strong>非对称加密</strong> 采用密钥对的形式，公钥用于加密，私钥用于解密，公钥公开发布，私钥个人保存，安全许多</p>
-</blockquote>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">	<span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">diaries:</span> <span class="string">/diaries</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span>  <span class="comment">#添加这一行</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">commonweal:</span> <span class="string">/404/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <br></p>
+<p>添加完之后运行<code>hexo s</code> 就可以看到菜单栏多了一个<strong>日记</strong>选项，日记的图标是在<a href="https://fontawesome.dashgame.com/"> fontawesome </a>找的，选用的是一个 “book” 图标</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%9A%84%E6%97%A5%E8%AE%B0%E9%80%89%E9%A1%B9.jpg" alt="菜单栏的日记选项"></p>
+<p>​        <br></p>
+<ol start="2">
+<li> 然后在博客目录下运行以下代码</li>
+</ol>
+   <br>
+  
+   <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo new page diaries</span><br></pre></td></tr></table></figure>
+
+<p>   ​    路径<code>Blog/source</code> 下就会出现一个新的diaries文件夹，文件夹内部会有一个 “index.md” 文件，到这里的时候我以为就已经结束了，想着在这里添加一些md文件，hexo就可以自动生成文章然后添加到 ”index.md“ 中索引，然后在网站上把一篇篇文章以卡片的形式展现出来展示出来，就像这样一样</p>
+<p>   <img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E6%97%A5%E8%AE%B0%E9%A2%84%E6%9C%9F%E6%95%88%E6%9E%9C.jpg" alt="日记预期效果"></p>
+   <br>
+
+<p>   ​    然而实际上效果确实这样</p>
+<p>   <img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E6%97%A5%E8%AE%B0%E5%AE%9E%E9%99%85%E6%95%88%E6%9E%9C.jpg" alt="日记实际效果"></p>
+   <br>
+
+<p>   ​    后来我一查，发现网上也没有太多教程，大多数最后的结果就是手动更改<code>Blog/source/diaries/index.md</code> 文件，往里面自行添加内容从而显示出来，这样以来，每新增一篇文章，就要手动往”index.md” 文件中添加一条记录，附上文章的链接，非常的麻烦</p>
+   <br>
+
+<p>   ​    后来我看到了 <strong>归档</strong> 页面的时间线形式，感觉日记的表现形式就应该像这样，有一条时间线，像这样</p>
+<p>   <img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E5%BD%92%E6%A1%A3%E7%9A%84%E5%BD%A2%E5%BC%8F.jpg" alt="归档的形式"></p>
+<p>   ​        中间数个小时的教程搜索过程简直要把我搞吐，多余的就不说了，下面是成功的步骤</p>
+<br>
+
+<br>
+
+<h3>成功的过程：</h3>
+
+<ol>
+<li><p>第一步和上面一样，更改主题配置文件，<code>config.next.yml</code> ，先加一个 “日记” 菜单选项，但是加的内容改成</p>
+<p><code>diaries: /categories/日记/ || fa fa-book  </code> </p>
 <br></li>
-<li><p><strong>非对称加密</strong> 双方在进行通信时，需要两对密钥对，各自生成自己的密钥对之后将公钥发送给对方，实现加密通讯</p>
-<br></li>
-<li><p><strong>非对称加密</strong> 公钥用于加密，私钥用于解密，公私钥能互换吗？</p>
-<blockquote>
-<p>从数学原理上说，私钥也可用于加密，公钥也可用于解密</p>
-<p>公钥加密只有私钥能解开，私钥加密只有公钥能解开</p>
-<p>但若是私钥当作公钥使用，用于加密并且传播出去，由于私钥本身可以推出公钥，可以使用推出来的公钥进行解密，因此一般公钥和私钥不会互换功能</p>
-<p>实际系统中，公钥指数e都很小，一般固定为3或者65537，而公钥的另外一个参数模N与私钥是共享的，所以公私钥不能互换。<br>至于为什么这样，我的理解是为了加快公钥运算速度，也就是验签速度</p>
-<p>其实不是任选一个作公钥的 非对称加密还有一个特点就是 从私钥计算公钥很简单 从公钥计算私钥很困难 这也是保证公钥加密算法安全的一个因素</p>
-</blockquote>
-<br></li>
-<li><p><strong>非对称加密</strong> 理论上公钥和私钥可以互相推导出</p>
-<blockquote>
-<p>公钥推出私钥非常困难</p>
-<p>私钥推出公钥比较容易</p>
-<p>一般的 RSA （一种非对称加密算法实现形式）實現中，公钥的生成选择的 Modular Multiplicative Inverse 都會是一个较小的数值，目的是降低 Hamming Weight，也就是体现在你看到的公钥比私钥短很多这上面。这就导致了，如果有人拿到了私钥，就可以较为轻松的计算出一个有效的公钥。</p>
-<p>所以永远不要把私钥公开出去。</p>
-<p>公钥一般固定65537（16进制10001），运算快也就是加密速度快（非对称加密，公钥只用作加密，不用作解密的）；私钥则取得比较大。可以互换的，互换后副作用是：加密变慢、解密复杂度降低</p>
-</blockquote>
-<br></li>
-<li><p><strong>非对称加密</strong> 私钥用于签名，公钥用于认证（验签）</p>
-<blockquote>
-<p>所谓签名就是用私钥进行加密，认证就是公钥用于解密</p>
-<p>当私钥进行加密时，此时作用不是加密原始数据，而是证明该数据确实来自私钥的拥有者，没有被伪造或是篡改。由于只能用你的公钥进行解密，并且只有本人拥有私钥，所以私钥进行加密时可以代表自己的身份</p>
-<p>当公钥进行解密时，就是用于验证对方是不是使用私钥的人，如果不是，用公钥是无法解开的，如果是，用公钥即可解开，对其身份得以认证</p>
-</blockquote>
+<li><p>每篇日记的frontmatter，都需要加上<code>categories: 日记</code> ，即可完成</p>
 </li>
-</ul>
+</ol>
+  <br> 
+
+<br>
+
+<h3>原理：</h3> 
+
+<p>​    分类的页面是有时间线形式的，如图，可以看到分类页面下有目前存在的几个类别，其中有一个就是 “日记”</p>
+<br>
+
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E5%88%86%E7%B1%BB%E7%9A%84%E6%97%B6%E9%97%B4%E7%BA%BF%E5%BD%A2%E5%BC%8F1.jpg" alt="分类的时间线形式"></p>
+<p>​    <br></p>
+<p>​    点开这个日记，就会进入日记的时间线界面</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E5%88%86%E7%B1%BB%E7%9A%84%E6%97%B6%E9%97%B4%E7%BA%BF%E5%BD%A2%E5%BC%8F2.jpg" alt="分类的时间线形式2"></p>
+<p>​    <br></p>
+<p>​    既然已经有现成的日记时间线页面了，我们就可以直接拿过来使用，简单来说就是将菜单栏的 “日记” 选项链接到这个页面</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%9A%84%E6%97%A5%E8%AE%B0%E9%80%89%E9%A1%B9.jpg" alt="菜单栏的日记选项"></p>
+<br>
+
+<p>​    首先要找的就是这个 <strong>日记时间线页面</strong> 在哪里，才能去链接它，其实它就在分类目录下的文件夹里，就是下面那幅图的 <strong>”index.html“</strong> 页面</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="归档文件夹"></p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E6%97%A5%E8%AE%B0%E6%96%87%E4%BB%B6%E5%A4%B9.jpg" alt="日记文件夹"></p>
+<p>​    我们在 <code>hexo g</code> 生成文章以后，hexo会在<strong>Blog/public/categories下自动生成归档文件夹</strong> ，所有<code>categories</code>属性为 <strong>“日记”</strong> 的文章最终都会被它目录下的 <strong>“index.html”</strong> 索引到，且形式为时间线形式，文章的categories属性就是下面这样</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/categories%E5%BD%A2%E5%BC%8F.jpg" alt="categories形式"></p>
+<p>​    <br></p>
+<blockquote>
+<p>（ 注意，categories后面的属性值是什么，文件夹的名字才是什么，比如</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/categories%E8%8B%B1%E6%96%87%E5%BD%A2%E5%BC%8F.jpg" alt="categories英文形式"></p>
+<p>​    那么生成的文件夹就是这个样子</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E5%BD%92%E6%A1%A3%E6%96%87%E4%BB%B6%E5%A4%B9%E8%8B%B1%E6%96%87%E5%BD%A2%E5%BC%8F.jpg" alt="归档文件夹英文形式"></p>
+<p>​    这个很重要，关乎到后面的页面链接能否成功，所以一定要搞明白）</p>
+</blockquote>
+<br>
+
+<p>​    既然找到了要链接的页面，那就开始链接</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">	<span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">##############################################</span></span><br><span class="line">	<span class="attr">diaries:</span> <span class="string">/categories/日记/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span>  <span class="comment">#添加这一行即可</span></span><br><span class="line">	<span class="comment">###############################################</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">commonweal:</span> <span class="string">/404/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p>​    <br></p>
+<p>​    这样就大功告成啦！</p>
+<p><img src="/2021/06/16/posts/Hexo&Next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E6%88%90%E6%9E%9C.jpg" alt="成果"></p>
+<br>
+
+<p>可能存在的问题：</p>
+<ol>
+<li>这句  <code>diaries: /categories/日记/ || fa fa-book</code>   里面的那个 diaries 会不会和链接有关系？</li>
+</ol>
+<p>​        不会，这个diaries就是侧边栏中哪些菜单的名字，我的侧边栏显示为日记实际上是因为我网页的显示语言为中文，将diaries翻译成了日记，和链接没有关系，可以说 <code>diaries: </code>  和 <code>/categories/日记/ || fa fa-book</code>  是两个部分，前面那个就是侧边栏菜单项展示的名字，你想起什么名字都可以，后面那个才是和链接页面有关的部分</p>
 <br>
 
 <br>
 
 <br>
 
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html">RSA算法原理（一）</a>—————–</p>
-<p><a href="http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html">RSA算法原理（二）</a>—————–</p>
+<p>参考文章：</p>
+<p>​        <a href="https://www.zhihu.com/question/33324071/answer/58775540">hexo下新建页面下如何放多个文章？</a>     ——本地文件</p>
 ]]></content>
       <categories>
         <category>技术相关</category>
       </categories>
       <tags>
-        <tag>密码学</tag>
-        <tag>密钥</tag>
-        <tag>非对称加密</tag>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
       </tags>
   </entry>
   <entry>
@@ -329,6 +358,104 @@
       </tags>
   </entry>
   <entry>
+    <title>密码学</title>
+    <url>/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/</url>
+    <content><![CDATA[<p><img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/Password.jpg" alt="Password"></p>
+<span id="more"></span>
+
+<p>在密码学中，有一个五元组：{明文、密文、密钥、加密算法、解密算法}，对应的加密方案称为密码体制（或密码）</p>
+<p><strong>明文</strong>：是作为加密输入的原始信息</p>
+<p><strong>密文</strong>：是明文经加密变换后的结果，即消息被加密处理后的形式</p>
+<p><strong>密钥</strong>：是参与密码变换的参数，一切可能的密钥构成的有限集称为密钥空间</p>
+<br>
+
+<br>
+
+<h2 id="对称加密算法"><a href="#对称加密算法" class="headerlink" title="对称加密算法"></a>对称加密算法</h2><p>加密和解密使用同一个密钥，主要算法包括：DES、3DES、RC2、RC4</p>
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/Symmetric-key algorithm.webp" alt="对称密钥算法">
+
+<p>例如：</p>
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/对称加密.jpeg" alt="对称加密">
+
+<br>
+
+<br>
+
+<h2 id="非对称加密算法"><a href="#非对称加密算法" class="headerlink" title="非对称加密算法"></a>非对称加密算法</h2><p>两个密钥同时产生：一把密钥（<strong>公钥</strong>）是公开的，任何人都可以得到。另一把密钥（<strong>私钥</strong>）只有密钥的拥有者知道</p>
+<p>用其中一把密钥（公钥或者是私钥）加密的信息，只能用另一把打开，主要算法包括：RSA算法，ECC（椭圆曲线）算法</p>
+<p>由已知的公钥几乎不可能推导出私钥，其实可以推出，按现在的计算机技术水平，要破解目前采用的1024位RSA密钥，需要上千年的计算时间，所以基本等于推不出来</p>
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm1.webp" alt="非对称密钥算法1">
+
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/asymmetric key algorithm2.webp" alt="非对称密钥算法2">
+
+<p>例如：</p>
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密.jpeg" alt="非对称加密" style="zoom:67%;">
+
+<img src="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/非对称加密2.jpeg" alt="非对称加密2" style="zoom:67%;">
+
+<br>
+
+<br>
+
+<h2 id="两种加密算法的区别与特点"><a href="#两种加密算法的区别与特点" class="headerlink" title="两种加密算法的区别与特点"></a>两种加密算法的区别与特点</h2><ul>
+<li><p><strong>对称加密</strong> 的加密和解密效率都要高于 <strong>非对称加密</strong> </p>
+<blockquote>
+<p>因此一般的做法是将报文用对称加密算法进行加密，然后将对称加密的密钥用非对称加密的公钥进行加密，发送出去，接收方使用私钥解密得到对称加密的密钥之后对报文进行解密</p>
+</blockquote>
+<br></li>
+<li><p><strong>对称加密</strong> 密钥分发困难，容易泄露，<strong>非对称加密</strong> 要安全许多</p>
+<blockquote>
+<p><strong>对称加密</strong> 的密钥在传递过程中一旦泄露，报文的安全性将不复存在</p>
+<p><strong>非对称加密</strong> 采用密钥对的形式，公钥用于加密，私钥用于解密，公钥公开发布，私钥个人保存，安全许多</p>
+</blockquote>
+<br></li>
+<li><p><strong>非对称加密</strong> 双方在进行通信时，需要两对密钥对，各自生成自己的密钥对之后将公钥发送给对方，实现加密通讯</p>
+<br></li>
+<li><p><strong>非对称加密</strong> 公钥用于加密，私钥用于解密，公私钥能互换吗？</p>
+<blockquote>
+<p>从数学原理上说，私钥也可用于加密，公钥也可用于解密</p>
+<p>公钥加密只有私钥能解开，私钥加密只有公钥能解开</p>
+<p>但若是私钥当作公钥使用，用于加密并且传播出去，由于私钥本身可以推出公钥，可以使用推出来的公钥进行解密，因此一般公钥和私钥不会互换功能</p>
+<p>实际系统中，公钥指数e都很小，一般固定为3或者65537，而公钥的另外一个参数模N与私钥是共享的，所以公私钥不能互换。<br>至于为什么这样，我的理解是为了加快公钥运算速度，也就是验签速度</p>
+<p>其实不是任选一个作公钥的 非对称加密还有一个特点就是 从私钥计算公钥很简单 从公钥计算私钥很困难 这也是保证公钥加密算法安全的一个因素</p>
+</blockquote>
+<br></li>
+<li><p><strong>非对称加密</strong> 理论上公钥和私钥可以互相推导出</p>
+<blockquote>
+<p>公钥推出私钥非常困难</p>
+<p>私钥推出公钥比较容易</p>
+<p>一般的 RSA （一种非对称加密算法实现形式）實現中，公钥的生成选择的 Modular Multiplicative Inverse 都會是一个较小的数值，目的是降低 Hamming Weight，也就是体现在你看到的公钥比私钥短很多这上面。这就导致了，如果有人拿到了私钥，就可以较为轻松的计算出一个有效的公钥。</p>
+<p>所以永远不要把私钥公开出去。</p>
+<p>公钥一般固定65537（16进制10001），运算快也就是加密速度快（非对称加密，公钥只用作加密，不用作解密的）；私钥则取得比较大。可以互换的，互换后副作用是：加密变慢、解密复杂度降低</p>
+</blockquote>
+<br></li>
+<li><p><strong>非对称加密</strong> 私钥用于签名，公钥用于认证（验签）</p>
+<blockquote>
+<p>所谓签名就是用私钥进行加密，认证就是公钥用于解密</p>
+<p>当私钥进行加密时，此时作用不是加密原始数据，而是证明该数据确实来自私钥的拥有者，没有被伪造或是篡改。由于只能用你的公钥进行解密，并且只有本人拥有私钥，所以私钥进行加密时可以代表自己的身份</p>
+<p>当公钥进行解密时，就是用于验证对方是不是使用私钥的人，如果不是，用公钥是无法解开的，如果是，用公钥即可解开，对其身份得以认证</p>
+</blockquote>
+</li>
+</ul>
+<br>
+
+<br>
+
+<br>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.ruanyifeng.com/blog/2013/06/rsa_algorithm_part_one.html">RSA算法原理（一）</a>—————–</p>
+<p><a href="http://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html">RSA算法原理（二）</a>—————–</p>
+]]></content>
+      <categories>
+        <category>技术相关</category>
+      </categories>
+      <tags>
+        <tag>密码学</tag>
+        <tag>密钥</tag>
+        <tag>非对称加密</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数字签名</title>
     <url>/2020/12/25/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/</url>
     <content><![CDATA[<p><img src="/2020/12/25/posts/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/Sign.gif" alt="Sign"></p>
@@ -366,6 +493,19 @@
       </categories>
       <tags>
         <tag>数字签名</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>草稿自留</title>
+    <url>/2020/12/25/posts/%E8%8D%89%E7%A8%BF%E8%87%AA%E7%95%99/</url>
+    <content><![CDATA[<p>存放一些待使用的摘抄<span id="more"></span></p>
+<h3 id="什么是pki"><a href="#什么是pki" class="headerlink" title="什么是pki"></a>什么是pki</h3><ul>
+<li>PKI 就是 Public Key Infrastructure 的缩写，翻译过来就是公开密钥基础设施。<strong>它是利用公开密钥技术所构建的，解决网络安全问题的，普遍适用的一种基础设施。</strong>美国政府的一个报告中把 PKI 定义为全面解决安全问题的基础结构，从而大大扩展了 PKI 的概念。而我们认为，<code>采用了公开密钥技术的基础设施就可以称为 PKI 。</code>公开密钥技术也就是利用非对称算法的技术。说 PKI 是基础设施，就意味着它对信息网络的重要。将 PKI 在网络信息空间的地位与电力基础设施在工业生活中的地位进行类比非常确切。电力系统，通过伸到用户的标准插座为用户提供能源。 PKI 通过延伸到用户本地的接口，为各种应用提供安全的服务，如认证、身份识别、数字签名、加密等。从概念上讲，如果离开使用 PKI 的应用系统， PKI 本身没有任何实际的用处，正如电力系统离开电器设备也没有用一样。有了 PKI ，安全应用程序的开发者不用再关心那些复杂的数学运算和模型，而直接按照标准使用一种插座（接口）。用户也不用关心如何进行对方的身份鉴别而可以直接使用标准的插座，正如在电力基础设施上使用电吹风一样。</li>
+<li><code>PKI 中最基本的元素就是数字证书。</code>所有安全的操作主要通过证书来实现。 PKI 的硬设备还包括签置这些证书的证书机构 (<strong>CA</strong>) ，登记和批准证书签置的登记机构 (<strong>RA</strong>) ，以及存储和发布这些证书的<strong>电子目录</strong>。 PKI 中还包括证书策略，证书路径以及证书的使用者。所有这些都是 PKI 的基本元素。许多这样的基本元素有机地结合在一起就构成了 PKI 。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>草稿</tag>
       </tags>
   </entry>
   <entry>
@@ -523,58 +663,6 @@
         <tag>数字签名</tag>
         <tag>数字证书</tag>
         <tag>CA</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>建站伊始</title>
-    <url>/2020/12/22/diaries/%E5%BB%BA%E7%AB%99%E4%BC%8A%E5%A7%8B/</url>
-    <content><![CDATA[<p>​    其实很久之前就想拥有一个属于自己的博客了，但是由于时间关系加本身是个计算机方面的小白，就一直停留在念想当中。。。<span id="more"></span></p>
-<p>​    在此之前，我对于网站的架构一直停留在 html，css，js，source，index 这种简单的印象里，无非是写一些html，引用source文件夹里的各种vedio，audio，img资源，通过css和js美化，然后发布到网站上去，之前也有一个尝试，花10块钱在一个网站上买了个小域名，还附送了100M的空间，暑假里和家人去旅游的时候，我把旅游的全程计划写成了一堆html文件，然后网上找了个网站模板，文件结构理清之后用flashfxp往远程主机里一传，还真弄出了个有模有样的小网站，当时也挺高兴的，毕竟头一次能够在网上检索出自己的东西，其实要是真的就那样搞个网站也不是不可，文件结构简单，自己还清楚，引用的资源基本也都是主机资源，这点因为我不太相信使用在线图床这种服务，之前貌似有个挺大的图床关掉了，那段时间在网上就经常看到有一些文章的图片都无法正常显示，而且平时浏览网站，也会出现一些图片无法加载的情况，让我很是恼火，对于自己写的东西，我是万万不能容忍有这种情况发生的，所以我的文件一般都是本地引用，当然肯定是有得必有失，就是主机空间消耗过多，这个问题以后再说吧，车到山前必有路。。。</p>
-<p>​    恰逢这段时间没什么课，一直学习还挺累的，也没啥意思，趁休息的时候又捡起了html，css相关的课程知识，建一个自己的博客这个想法又从脑子里冒了出来，闲着也是闲着，开整呗。。。</p>
-<p>​    花了两天吧，主要是配置网站的主题，一开始接触next主题的配置还真挺无从下手的，而且老是出bug，中间重新来了几次，哭死 T T，付出的努力和时间也不是白费的，对hexo的 使用，next主题的配置还是摸了个大概，日后慢慢玩，有的是时间调教它，不过想想中间碰到的几个bug，还真是欲哭无泪。。。</p>
-<p>​    就先这样吧，谨以此开篇记录 “清河的Blog” 的出生。。。</p>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>2021年6月15日</title>
-    <url>/2021/06/16/diaries/2021%E5%B9%B46%E6%9C%8815%E6%97%A5/</url>
-    <content><![CDATA[<p>​    为了实现单独的日记菜单，今天查了一天的教程，好在不负有心人，晚上的时候还是给我找到了解决方法，实现了日记的时间线形式，不过弄完之后又冒出来一个想法，就是能不能把日记整成像主页那样，一篇文章一个小板块，排列在中央区域的形式<span id="more"></span></p>
-<p>​    果然折腾的心是停不下来的，由于博客是在半年前建好的，建好之后写了没几篇文章，后来就再也没怎么动过，前段时间想在搞搞，发现hexo出了好多问题，让人头秃，逼不得已把博客重新建了一遍，还好写的文章都还在，就是之前个性化定制的好多东西都没了，站点提交，网页音乐播放，访问ip记录，书签，简历啥的都没了，不过也还行，现在搞了一遍之后，差不多越来越得心应手了，这些个性化配置等以后再搞吧，先稳定下来再说。</p>
-<p>​    另外，确实还有一些需要做的，就是有些文章写的还不是很完善，还需要改改，然后研究研究博客怎么在不同的设备上同步，不知道借助git好还是onedrive好，这段时间就忙这些吧</p>
-<p>​    今天就酱了，虽然感觉白忙活好多，但是欣慰的是想实现的功能还是实现了，十一点半了，晚安！</p>
-]]></content>
-      <categories>
-        <category>日记</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Hexo&amp;Next给自定义页面加时间线</title>
-    <url>/2021/06/16/posts/hexo&amp;next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/</url>
-    <content><![CDATA[<p>​    昨天突然想开一个日记的栏目，所以给侧边栏的菜单项添加了一个 “日记” 选项，专门用于存放每天的记录，经过一天的折腾以后，终于成功了，以下是折腾过程<span id="more"></span></p>
-<p>初次试验未能成功：</p>
-<ol>
-<li>首先先更改主题配置文件<code>config.next.yml</code> ,加入一行代码来添加日记选项</li>
-</ol>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">	<span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">diaries:</span> <span class="string">/diaries</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span>  <span class="comment">#添加这一行</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">commonweal:</span> <span class="string">/404/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heartbeat</span></span><br></pre></td></tr></table></figure>
-
-<p><img src="/2021/06/16/posts/hexo&next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%9A%84%E6%97%A5%E8%AE%B0%E9%80%89%E9%A1%B9.jpg" alt="菜单栏的日记选项"></p>
-<p>​        添加完之后运行<code>hexo s</code> 就可以看到菜单栏多了一个<strong>日记</strong>选项，日记的图标是在<a href="https://fontawesome.dashgame.com/">fontawesome</a>找的，选用的是一个 “book” 图标</p>
-<ol start="2">
-<li> 然后在博客目录下运行以下代码</li>
-</ol>
-   <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo new page diaries</span><br></pre></td></tr></table></figure>
-
-<p>   路径<code>Blog/source</code> 下就会出现一个新的diaries文件夹，文件夹内部会有一个 “index.md” 文件，到这里的时候我以为就已经结束了，想着在这里添加一些md文件，hexo就可以自动生成文章然后添加到 ”index.md“ 中索引，然后在网站上按照一篇篇文章展示出来，就像这样一样：</p>
-]]></content>
-      <categories>
-        <category>技术相关</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-        <tag>Next</tag>
       </tags>
   </entry>
 </search>

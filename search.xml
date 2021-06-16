@@ -19,7 +19,7 @@
     <title>离校的这几天</title>
     <url>/2021/06/15/diaries/2021%E5%B9%B46%E6%9C%8814%E6%97%A5/</url>
     <content><![CDATA[<p>​    </p>
-<p>忙活了些时日，终于结束了毕业设计，忙着的时候感觉非常烦恼，想着怎么还不结束，拖了近三个月的时间，已经让我有了一些不耐，但是真的结束之后，我却又不知道该做些什么，这三个月，虽然谈不上身心俱疲，不知道为什么，确也让我心里那么不是滋味，想想这四年，过得真快，有多少时间被自己浪费，有多少蠢事被自己犯下，虽然也有些收获，到了最后，留在心间的，最多的还是怅然…</p>
+<p>忙活了些时日，终于结束了毕业设计，忙着的时候感觉非常烦恼，想着怎么还不结束，拖了近三个月的时间，已经让我有了一些不耐，但是真的结束之后，我却又不知道该做些什么，这三个月，虽然谈不上身心俱疲，不知道为什么，确也让我心里那么不是滋味，想想这四年，过得真快，有多少时间被自己浪费，有多少蠢事被自己犯下，虽然也有些收获，到了最后，留在心间的，最多的还是怅然…<span id="more"></span></p>
 <p>​    这段时间，低落的情绪始终缭绕在我的心里，没有事做，没有人可以陪着分享这种感受，我好像是属于那种脱群的人，当大家在热闹开心的在一起嬉戏玩闹时，我心里失落的情绪怎么也驱散不掉，也许大家期盼的是未来，我可能在害怕结束…文字真是可笑，写出来的东西总是会变了味道，这么矫情，也许真正可笑的我自己吧..</p>
 <p>​    好啦，快要到了健身的时间了，今天也不多写了，我也不知道自己在写些什么，也许就是一堆狗屁不通的感慨，犯二青年的疯言疯语，也许确实是需要一个宣泄的地方，二十多年，不知道从什么时候开始意识到的，这个世界上人和人，从来不能心意相通，每个人都是孤独的，每个人都需要一个能够宣泄，一个能够自我救赎的地方吧，感谢，能看到这些文章的陌生人，我知道世界上还有人可以听听我的牢骚，哪怕是一笑置之，给我的欣慰也是很大的。</p>
 <p>​    另外，这三个月，谢谢你陪着我，我想我们也该到了结束的时候了，不管你是在玩还是什么，我确实付出了一些真的东西，从开心甜蜜到期待到失望，该体会的我也都体会了，我只想说，谢谢你。</p>
@@ -549,5 +549,32 @@
       <categories>
         <category>日记</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Hexo&amp;Next给自定义页面加时间线</title>
+    <url>/2021/06/16/posts/hexo&amp;next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/</url>
+    <content><![CDATA[<p>​    昨天突然想开一个日记的栏目，所以给侧边栏的菜单项添加了一个 “日记” 选项，专门用于存放每天的记录，经过一天的折腾以后，终于成功了，以下是折腾过程<span id="more"></span></p>
+<p>初次试验未能成功：</p>
+<ol>
+<li>首先先更改主题配置文件<code>config.next.yml</code> ,加入一行代码来添加日记选项</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">	<span class="attr">home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-home</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-user</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-tags</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-th</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-archive</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">diaries:</span> <span class="string">/diaries</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-book</span>  <span class="comment">#添加这一行</span></span><br><span class="line"></span><br><span class="line">	<span class="attr">commonweal:</span> <span class="string">/404/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2021/06/16/posts/hexo&next%E7%BB%99%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E5%8A%A0%E6%97%B6%E9%97%B4%E7%BA%BF/%E8%8F%9C%E5%8D%95%E6%A0%8F%E7%9A%84%E6%97%A5%E8%AE%B0%E9%80%89%E9%A1%B9.jpg" alt="菜单栏的日记选项"></p>
+<p>​        添加完之后运行<code>hexo s</code> 就可以看到菜单栏多了一个<strong>日记</strong>选项，日记的图标是在<a href="https://fontawesome.dashgame.com/">fontawesome</a>找的，选用的是一个 “book” 图标</p>
+<ol start="2">
+<li> 然后在博客目录下运行以下代码</li>
+</ol>
+   <figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">hexo new page diaries</span><br></pre></td></tr></table></figure>
+
+<p>   路径<code>Blog/source</code> 下就会出现一个新的diaries文件夹，文件夹内部会有一个 “index.md” 文件，到这里的时候我以为就已经结束了，想着在这里添加一些md文件，hexo就可以自动生成文章然后添加到 ”index.md“ 中索引，然后在网站上按照一篇篇文章展示出来，就像这样一样：</p>
+]]></content>
+      <categories>
+        <category>技术相关</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Next</tag>
+      </tags>
   </entry>
 </search>

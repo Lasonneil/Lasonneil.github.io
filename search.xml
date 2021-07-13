@@ -734,4 +734,30 @@
         <category>日记</category>
       </categories>
   </entry>
+  <entry>
+    <title>hexo new在子目录创建文章</title>
+    <url>/2021/07/14/diaries/hexo%20new%E5%9C%A8%E5%AD%90%E7%9B%AE%E5%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/</url>
+    <content><![CDATA[<p>​    目前的文章分类有 ”技术相关“ 和 ”日记“ 两类，但是这两类文章是通过hexo本身的categories属性分开的，实际在创建时两类文章是在同一目录下的，我希望日记的文章归在日记文件夹下，普通文章就归在普通文件夹下<span id="more"></span>，如图所示：</p>
+<img src="/2021/07/14/diaries/hexo%20new%E5%9C%A8%E5%AD%90%E7%9B%AE%E5%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/子目录创建文章.png" alt="子目录创建文章" style="zoom:50%;">
+
+<p>​    </p>
+<p>​    我所有的日记文章全部都放在diaries文件夹下，其他文章都放在posts文件夹下</p>
+<blockquote>
+<p>注意：这是我调整过的文件目录</p>
+<p>/_posts目录下新增了两个文件夹，原本是没有的，原来应当是是所有的文章都在  /_post目录下</p>
+<p>新增了diaries文件夹和posts文件夹后，就可以把文章有序的放在不同的文件夹里了</p>
+</blockquote>
+<p>​    但是，当<code>hexo new</code> 文章时，创建的文章依然在/_posts 目录下，想要直接在/_posts/diaries目录下直接创建文章的话，应当执行</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">hexo new post -p diaries/<span class="built_in">test</span></span><br><span class="line"></span><br><span class="line">//<span class="built_in">test</span>就是文章名字</span><br></pre></td></tr></tbody></table></figure>
+
+<img src="/2021/07/14/diaries/hexo%20new%E5%9C%A8%E5%AD%90%E7%9B%AE%E5%BD%95%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0/子目录创建结果.png" alt="子目录创建结果" style="zoom:67%;">
+
+]]></content>
+      <categories>
+        <category>技术相关</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
 </search>

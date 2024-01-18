@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lasonneil.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="数字证书是一种在网络世界中用来验证身份的数字标识，个人，组织，机构在网络上进行交易或者提交账号密码时，需要认证对方是不是真的是你想要进行交流的对象，而不是骇客假冒的，从而避免交易信息，账号密码信息等被骇客窃取">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字证书是什么">
+<meta property="og:url" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/index.html">
+<meta property="og:site_name" content="清河的博客">
+<meta property="og:description" content="数字证书是一种在网络世界中用来验证身份的数字标识，个人，组织，机构在网络上进行交易或者提交账号密码时，需要认证对方是不是真的是你想要进行交流的对象，而不是骇客假冒的，从而避免交易信息，账号密码信息等被骇客窃取">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/CA.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Fake_Sever.jpg">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Win_Certification.jpg">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/self-signed-certificate.jpg">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/IE_Certification.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Certification.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_Files.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_more.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_normal_Certification.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_innormal_Certification.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification_more.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/x509v3.gif">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-1.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-2.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-3.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.gif">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.png">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetSignKey.jpg">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetEncriptionKey.jpg">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications.jpg">
+<meta property="og:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications2.jpg">
+<meta property="article:published_time" content="2020-12-23T22:54:04.000Z">
+<meta property="article:modified_time" content="2024-01-18T02:20:35.221Z">
+<meta property="article:author" content="清河">
+<meta property="article:tag" content="密码学">
+<meta property="article:tag" content="数字签名">
+<meta property="article:tag" content="数字证书">
+<meta property="article:tag" content="CA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/CA.png">
+
+
+<link rel="canonical" href="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/","path":"2020/12/24/posts/数字证书是什么/","title":"数字证书是什么"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>数字证书是什么 | 清河的博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="https://blog-remark-system.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">清河的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">庸人自处之所</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-game"><a href="/game/" rel="section"><i class="fa fa-gamepad fa-fw"></i>game</a></li><li class="menu-item menu-item-diaries"><a href="/categories/%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-book fa-fw"></i>diaries</a></li><li class="menu-item menu-item-transport"><a href="/transport/" rel="section"><i class="fa fa-fighter-jet fa-fw"></i>transport</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6-CA-%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">数字证书(CA)是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-text">数字证书的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-text">数字证书的作用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%B5%E5%AD%90%E5%95%86%E5%8A%A1"><span class="nav-text">电子商务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E7%BD%91%E7%AB%99%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BF%A1%EF%BC%88%E4%BB%85%E9%92%88%E5%AF%B9HTTPS%EF%BC%89"><span class="nav-text">验证网站是否可信（仅针对HTTPS）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%9F%90%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%8F%AF%E4%BF%A1%EF%BC%88%E6%98%AF%E5%90%A6%E8%A2%AB%E7%AF%A1%E6%94%B9%EF%BC%89"><span class="nav-text">验证某文件是否可信（是否被篡改）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%94%B1%E8%B0%81%E9%A2%81%E5%8F%91"><span class="nav-text">数字证书由谁颁发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%9A%84%E5%86%85%E5%AE%B9"><span class="nav-text">数字证书的内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-text">数字证书的结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E5%B1%82-%E5%8D%95%E5%B1%82%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-text">单层&#x2F;单层层次结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E5%B1%82%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-text">两层层次结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E5%B1%82%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-text">三层层次结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%A1%E4%BB%BB%E9%93%BE"><span class="nav-text">信任链</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E7%BB%88%E7%AB%AF%E5%AE%9E%E4%BD%93%E8%AF%81%E4%B9%A6"><span class="nav-text">验证终端实体证书</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">数字证书的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6"><span class="nav-text">签名证书</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86%E8%AF%81%E4%B9%A6"><span class="nav-text">加密证书</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-text">参考</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="清河"
+      src="/images/avatar/%E7%9C%8B%E5%B1%B1%E7%9C%8B%E6%B5%B7.jpg">
+  <p class="site-author-name" itemprop="name">清河</p>
+  <div class="site-description" itemprop="description">要 起而行之</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar/%E7%9C%8B%E5%B1%B1%E7%9C%8B%E6%B5%B7.jpg">
+      <meta itemprop="name" content="清河">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清河的博客">
+      <meta itemprop="description" content="要 起而行之">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="数字证书是什么 | 清河的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数字证书是什么
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-12-23 22:54:04" itemprop="dateCreated datePublished" datetime="2020-12-23T22:54:04Z">2020-12-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-18 02:20:35" itemprop="dateModified" datetime="2024-01-18T02:20:35Z">2024-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF%E7%9B%B8%E5%85%B3/" itemprop="url" rel="index"><span itemprop="name">技术相关</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>7.5k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>27 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/CA.png" alt="CA"></p>
+<p>数字证书是一种在网络世界中用来验证身份的数字标识，个人，组织，机构在网络上进行交易或者提交账号密码时，需要认证对方是不是真的是你想要进行交流的对象，而不是骇客假冒的，从而避免交易信息，账号密码信息等被骇客窃取<span id="more"></span></p>
+<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><h2 id="数字证书-CA-是什么"><a href="#数字证书-CA-是什么" class="headerlink" title="数字证书(CA)是什么"></a>数字证书(CA)是什么</h2><p>数字证书从本质上来说是一种电子文档，由<strong>证书授权中心(以下简称为<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/CA%E4%B8%AD%E5%BF%83/6471855">CA中心</a>）</strong>所颁发的一种较为权威与公正的证书</p>
+<p>用于确定网络上的个人，计算机和其它实体的真实身份，是在互联网通讯中标识通讯各方身份信息的一个数字认证，由于互联网的虚拟性，你无法确定和你进行交易的对象是否是你想要交易的对象，而不是黑客假冒的，举个栗子：</p>
+<p>​		<code>比如有人盗了你朋友的QQ号，假装你的朋友向你借钱，由于你无法确定对话那头是你朋友还是盗号的人，所以你可能会选择视频或者语音的方式来确认他的身份，从而知道向你借钱的不是你的朋友，而是黑客</code> </p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Fake_Sever.jpg" alt="Fake_Sever"></p>
+<p>其中，数字证书的作用就和你通过视频或者语音的方式来确认对方身份时的作用一样，用来确保对方的真实身份，不同的是，现实世界是通过身份证，长相，声音进行判断，网络则是通过数字证书进行判断</p>
+<p>因此，简单来说数字证书就是<strong>“网络实体”的身份证</strong>，是用来在网络世界向对方证明 “你是谁” 的凭证</p>
+<p>先对证书长什么样有个大概印象：</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Win_Certification.jpg" alt="Win_Certification"></p>
+<p>正如首句所说，本质上是一种具有规定格式和内容的电子文档，此文档具有公信力，（举个栗子这么说）可以通过数字证书证明此Windows是微软公司的产品，不是别人假冒编写的盗版，也不是经过别人修改过的版本，是正规的。</p>
+<p>（其实你每次下载的软件安装包也会包含它自己的数字证书和数字签名，如果数字签名正常就说明软件安装包正常，没有被黑客修改过，栗子往下看）</p>
+<h2 id="数字证书的原理"><a href="#数字证书的原理" class="headerlink" title="数字证书的原理"></a>数字证书的原理</h2><blockquote>
+<p><strong>预备知识：密码学、数字签名</strong></p>
+</blockquote>
+<p>数字证书在你和你所拥有的公&#x2F;私钥对之间建立了一种联系，即数字证书可以通过你所拥有的密钥对来唯一确定你的身份，也就是说，只要你有自己的数字证书，就可以用这个数字证书来证明是你自己。</p>
+<p>这里面有个很重要的点，就是数字证书的颁发机构可以有很多，甚至你自己就可以成为CA中心，如果你需要具有公信力，人们都承认公正的数字证书，就要向国家认可的权威，可信，公正的第三方机构申请数字证书；如果只是小范围团体内传播信息，可以自己设立自己的CA中心（前提是你懂得如何发布数字证书），但是颁发的CA证书在社会上就不具有公信力，只在团体内部交流时使用</p>
+<p><strong>那么CA中心是如何颁发数字证书的呢</strong><del>后面会提到加密证书颁发方式</del></p>
+<p>用户先自己生成密钥对，将公钥以及部分个人信息传送给一家CA认证中心，认证中心在确认是用户本人的请求之后之后，制作并颁发数字证书给用户，证书内包含了用户公钥，用户基本信息和其它一些基础信息，同时还附有认证中心的数字签名，当用户想证明自己公开密钥的合法性（即证明这个公钥是不是自己的）时，就可以提供这一数字证书</p>
+<p>（证书的产生：认证中心把用户证书的基本信息做哈希算法，然后用自己的私钥对哈希值进行加密，生成签名,最后形成一个具有如下格式的电子文档）</p>
+<p>![数字证书](.&#x2F;数字证书是什么&#x2F;digital certificate.webp)</p>
+<p>显然，到这里数字证书就生成了，但是有一个问题，按道理数字证书的格式应该都是一样的，那么CA中心的数字证书由谁来进行颁发和认证呢？</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/self-signed-certificate.jpg"></p>
+<p>这种采用证书中的公钥对应的私钥进行签名的证书被称为自签名证书，意思是签名者和证书拥有者为同一人。您自己可以成为CA并颁发自己的证书，这些证书称为自签名证书，但出于商业目的，您的自签名证书将不受信任。只有已建立且知名的CA自签名证书才是可信的。CA的根证书始终是自签名的。</p>
+<h2 id="数字证书的作用"><a href="#数字证书的作用" class="headerlink" title="数字证书的作用"></a>数字证书的作用</h2><p>​	是  为  了  <strong>安  全 ！！</strong> </p>
+<h3 id="电子商务"><a href="#电子商务" class="headerlink" title="电子商务"></a>电子商务</h3><p>​	代表性的栗子就是 <strong>电子商务</strong> ，基于互联网的电子商务系统技术使网上购物的顾客可以轻松获得 商家和企业的信息，但同时也增加了对某些敏感或有价值的数据被盗取和滥用的风险，比如最简单的账号密码订单等等。</p>
+<p>​	买方和卖方都必须对于在因特网上进行的一切金融交易运作都是真实可靠的，并且要使顾客、商家和企业等交易各方都具有绝对的信心，因而因特网(Internet)电子商务系统必须保证具有十分可靠的安全保密技术</p>
+<p>​	人们在感叹电子商务的巨大潜力的同时，不得不冷静地思考，在人与人互不见面的计算机互联网上进行交易和作业时，怎么才能保证交易的公正性和安全性，<strong>保证交易双方身份的真实性</strong>。那就是建立<strong>安全证书体系结构</strong>。<strong>数字安全证书(CA)提供了一种在网上验证身份的方式</strong>。安全证书体制主要采用了公开密钥体制，其它还包括对称密钥加密、数字签名、数字信封等技术</p>
+<p>​    使用<strong>数字证书</strong>，通过运用对称和非对称密码体制等密码技术建立起一套严密的身份认证系统，从而保证：信息除发送方和接收方外不被其它人窃取;信息在传输过程中不被篡改;发送方能够通过数字证书来确认接收方的身份;发送方对于自己的信息不能抵赖。</p>
+<p>​	CA中心采用的是以数字加密技术为核心的数字证书认证技术，通过数字证书，CA中心可以对互联网上所传输的各种信息进行加密、解密、数字签名与签名认证等各种处理，同时也能保障在数字传输的过程中不被不法分子所侵入，或者即使受到侵入也无法查看其中的内容。</p>
+<p>​	<strong>简而言之，确保在网上进行交易时，交易的对象是真实存在的并且是你想要进行交易的对象，而不是假冒的，由CA中心来为你担保，持有CA证书的人就是你交易的对象</strong> </p>
+<h3 id="验证网站是否可信（仅针对HTTPS）"><a href="#验证网站是否可信（仅针对HTTPS）" class="headerlink" title="验证网站是否可信（仅针对HTTPS）"></a>验证网站是否可信（仅针对HTTPS）</h3><p>通常，我们如果访问某些敏感的网页（比如用户登录的页面），其协议都会使用 HTTPS 而不是 HTTP。因为 HTTP 协议是明文的，一旦有坏人在偷窥你的网络通讯，他&#x2F;她就可以看到网络通讯的内容（比如你的密码、银行帐号、等）；而 HTTPS 是加密的协议，可以保证你的传输过程中，坏蛋无法偷窥。<br>　　但是，千万【不要】以为，HTTPS 协议有了加密，就可高枕无忧了。俺再举一个例子来说明，光有加密是不够滴。假设有一个坏人，搞了一个假的网银的站点，然后诱骗你上这个站点。假设你又比较单纯，一不留神，就把你的帐号，口令都输入进去了。那这个坏蛋的阴谋就得逞鸟。<br>　　为了防止坏人这么干，HTTPS 协议除了有加密的机制，还有一套证书的机制。通过证书来确保，某个站点确实就是某个站点。<br>　　有了证书之后，当你的浏览器在访问某个 HTTPS 网站时，会验证该站点上的 CA 证书（类似于验证介绍信的公章）。如果浏览器发现该证书没有问题（证书被某个根证书信任、证书上绑定的域名和该网站的域名一致、证书没有过期），那么页面就直接打开；否则的话，浏览器会给出一个警告，告诉你该网站的证书存在某某问题，是否继续访问该站点？为了形象起见，下面给出 IE 和 Firefox 的抓图：</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/IE_Certification.png" alt="IE_Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Certification.png" alt="Firefox_Certification"></p>
+<p>大多数知名的网站，如果用了 HTTPS 协议，其证书都是可信的（也就不会出现上述警告）。所以，今后你如果上某个知名网站，发现浏览器跳出上述警告，你就要小心啦！</p>
+<h3 id="验证某文件是否可信（是否被篡改）"><a href="#验证某文件是否可信（是否被篡改）" class="headerlink" title="验证某文件是否可信（是否被篡改）"></a>验证某文件是否可信（是否被篡改）</h3><p>证书除了可以用来验证某个网站，还可以用来验证某个文件是否被篡改。具体是通过证书来制作文件的数字签名。制作数字签名的过程太专业，咱就不说了。后面专门告诉大家如何验证文件的数字签名。考虑到大多数人用 Windows 系统，俺就拿 Windows 的例子来说事儿。<br>　　比如，俺手头有一个 Firefox 的安装文件（带有数字签名）。当俺查看该文件的属性，会看到如下的界面。眼神好的同学，会注意到到上面有个“<strong>数字签名</strong>”的标签页。如果没有出现这个标签页，就说明该文件没有附带数字签名。</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_Files.png" alt="Firefox_Setup_Files"></p>
+<p>选择该标签页，看到如下界面。<br>　　顺便说一下，某些数字签名中没有包含“邮件地址”，那么这一项会显示“不可用”；同样的，某些数字签名没有包含“时间戳”，也会显示“不可用”。不要紧张，这里显示的“不可用”跟数字签名的有效性【没关系】。</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_more.png" alt="Firefox_Setup_more"></p>
+<p>一般来说，签名列表中，有且仅有一个签名。选中它，点“<strong>详细信息</strong>”按钮。跳出如下界面：<br>　　通常这个界面会显示一行字：“该数字签名正常”（图中红圈标出）。如果有这行字，就说明该文件从出厂到你手里，中途没有被篡改过（是原装滴、是纯洁滴）。</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_normal_Certification.png" alt="Firefox_Setup_normal_Certification"></p>
+<p>如果该文件被篡改过了（比如，感染了病毒、被注入木马），那么对话框会出现一个警告提示“<strong>该数字签名无效</strong>”（图中红圈标出）。界面如下：</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Firefox_Setup_innormal_Certification.png" alt="Firefox_Setup_innormal_Certification"></p>
+<p>不论签名是否正常，你都可以点“查看证书”按钮。这时候，会跳出证书的对话框。如下：</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification.png" alt="Certification"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/Certification_more.png" alt="Certification_more"></p>
+<p>从后一个界面，可以看到俺刚才说的证书信任链。图中的信任链有3层：<br>第1层是根证书（Thawte Premium Server CA）<br>第2层是 Thawte 专门用来签名的证书<br>第3层是 Mozilla 自己的证书</p>
+<p>　　目前大多数知名的公司（或组织机构），其发布的可执行文件（比如软件安装包、驱动程序、安全补丁），都带有数字签名。你可以自己去看一下。<br>　　建议大伙儿在安装软件之前，都先看看是否有数字签名？如果有，就按照上述步骤验证一把。一旦数字签名是坏的，那可千万别装。</p>
+<h2 id="数字证书由谁颁发"><a href="#数字证书由谁颁发" class="headerlink" title="数字证书由谁颁发"></a>数字证书由谁颁发</h2><p>数字证书由<strong>证书授权中心(CA中心)<strong>或者认证中心的</strong>“下级认证CA中心”</strong>颁发，CA中心是能向用户签发数字证书以确认用户身份的管理机构，也是数字证书发行的唯一机构，它在数字证书发行中充当担保的角色<del>（认证中心的公共密钥必须是可靠的，认证中心必须公布其公共密钥或由更高级别的认证中心提供一个电子凭证来证明其公共密钥的有效性，后一种方法导致了多级别认证中心的出现）</del></p>
+<p>当需要确认身份时，由他们来说，“是的，这个人就是他们所说的人，而我们，CA，验证，担保”</p>
+<p>CA中心可以是民间团体，也可以是政府机构，由具有权威性和公正性的第三方信任机构担当，它的作用就像我们现实生活中颁发证件的公司，比如护照办理机构，也就是说CA中心不止有一个，可以有多个，但必须都是具有公信力的机构，被人们所信任</p>
+<blockquote>
+<p>其实所有的公司都可以发布证书，我们自己也可以去注册一家公司来专门给别人发布证书。但是很明显，我们自己的专门发布证书的公司是不会被那些国际上的权威机构认可的，人家怎么知道你是不是个狗屁皮包公司？因此微软在它的操作系统中，并不会信任我们这个证书发布机构，当应用程序在检查证书的合法信的时候，一看证书的发布机构并不是操作系统所信任的发布机构，就会抛出错误信息。也就是说windows操作系统中不会预先安装好我们这个证书发布机构的证书，不信任我们这个发布机构。</p>
+<p><strong>不受信任的证书发布机构的危害</strong></p>
+<p>为什么一个证书发布机构受不受信任这么重要？我们举个例子。假设我们开了一个狗屁公司来为别人发布证书，并且我和微软有一腿，微软在他们的操作系统中把我设置为了受信任的证书发布机构。现在如果有个小公司叫Wicrosoft 花了10块钱让我为他们公司申请了一个证书，并且公司慢慢壮大，证书的应用范围也越来越广。然后有个奸商的公司JS Company想冒充Wicrosoft，于是给了我￥10000，让我为他们颁布一个证书，但是证书的名字(Subject)要写Wicrosoft，假如我为了这￥10000，真的把证书给了他们，那么他们以后就可以使用这个证书来冒充Wicrosoft了。</p>
+<p>如果是一个优秀的证书发布机构，比如你要向他申请一个名字叫Wicrosoft的证书，它会让你提供很多资料证明你确实可以代表Wicrosoft这个公司，也就是说他回去核实你的身份。证书发布机构是要为他发布出的证书负法律责任的。</p>
+<p>到这里，你可能会想，TMD，那我们自己就不能发布证书吗？就一定要花钱去申请？当然不是，我们自己也可以成立证书发布机构，但是需要通过一些安全认证等等，只是有点麻烦。另外，如果数字证书只是要在公司内部使用，公司可以自己给自己生成一个证书，在公司的所有机器上把这个证书设置为操作系统信任的证书发布机构的证书(这句话仔细看清楚，有点绕口)，这样以后公司发布的证书在公司内部的所有机器上就可以通过验证了(在发布证书时，把这些证书的Issuer(发布机构)设置为我们自己的证书发布机构的证书的Subject(主题)就可以了)。但是这只限于内部应用，因为只有我们公司自己的机器上设置了信任我们自己这个所谓的证书发布机构，而其它机器上并没有事先信任我们这个证书发布机构，所以在其它机器上，我们发布的证书就无法通过安全验证。</p>
+</blockquote>
+<h2 id="数字证书的内容"><a href="#数字证书的内容" class="headerlink" title="数字证书的内容"></a>数字证书的内容</h2><p>下图显示了X.509版本3证书的内容：</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/x509v3.gif" alt="单层数字证书"></p>
+<p>X.509版本3证书支持自X.509版本1以来支持的以下字段：</p>
+<ul>
+<li><p>***主题***：提供CA颁发证书的计算机，用户，网络设备或服务的名称。主题名称通常使用X.500或轻量级目录访问协议（LDAP）格式表示。</p>
+</li>
+<li><p>***序列号***：为CA颁发的每个证书提供唯一标识符。</p>
+</li>
+<li><p>***颁发者***：为颁发证书的CA提供专有名称。发行者名称通常使用X.500或LDAP格式表示。</p>
+</li>
+<li><p>***有效自***：提供证书生效的日期和时间。 </p>
+</li>
+<li><p>***有效收件人***：提供证书不再有效的日期和时间。应用程序或服务评估证书的日期必须介于证书的Valid From和Valid To字段之间，以使证书有效。</p>
+</li>
+<li><p>***公钥***：包含与证书关联的密钥对的公钥。</p>
+</li>
+<li><p>***签名算法***：用于签署证书的算法。</p>
+</li>
+<li><p>***签名值***：包含数字签名的位串。</p>
+</li>
+</ul>
+<p>除版本1字段外，X.509版本3证书还包括为证书提供附加功能和功能的扩展。这些扩展是可选的，并不一定包含在CA颁发的每个证书中：</p>
+<ul>
+<li><em>主题替代名称</em>：主题可以以多种不同的格式呈现。例如，如果证书必须包含LDAP专有名称，电子邮件名称和用户主体名称（UPN）格式的用户帐户名，则可以通过添加证书中的电子邮件名称或UPN包含这些附加名称格式的主题备用名称扩展名。</li>
+<li><em>CRL分发点（CDP）：</em> 当用户，服务或计算机提供证书时，应用程序或服务必须确定证书是否在其有效期到期之前被撤销。CDP扩展提供一个或多个URL，应用程序或服务可以从中检索证书吊销列表（CRL）。</li>
+<li><em>授权信息访问（AIA）：</em> 在应用程序或服务验证证书后，还必须评估颁发证书的CA的证书（也称为父CA）的撤销和有效性。AIA扩展提供一个或多个URL，应用程序或服务可以从中检索颁发的CA证书。 </li>
+<li><em>增强型密钥用法（EKU）：</em> 此属性包括可用于证书的每个应用程序或服务的对象标识符（OID）。每个OID都是来自全球注册机构的唯一数字序列。 </li>
+<li><em>证书策略：</em> 描述组织在颁发证书之前验证证书请求者身份所采取的措施。OID用于表示验证过程，并且可以包括策略限定的URL，该URL完整地描述了验证身份所采取的措施。</li>
+</ul>
+<h2 id="数字证书的结构"><a href="#数字证书的结构" class="headerlink" title="数字证书的结构"></a>数字证书的结构</h2><p>CA在结构上是分层的。通常有三种类型的层次结构，它们由层数表示，也有三层以上的，至于为什么要这么多层，无非是安全和方便管理CA</p>
+<h4 id="单层-单层层次结构"><a href="#单层-单层层次结构" class="headerlink" title="单层&#x2F;单层层次结构"></a>单层&#x2F;单层层次结构</h4><p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-1.png" alt="单层数字证书"></p>
+<p>单层层次结构由一个CA组成。单个CA既是根CA又是颁发CA. 根CA是PKI的信任锚的术语。信任根CA的任何应用程序，用户或计算机都信任CA层次结构颁发的任何证书。颁发CA是向最终实体颁发证书的CA. 出于安全原因，这两个角色通常是分开的。使用单层层次结构时，它们将合并在一起。</p>
+<h4 id="两层层次结构"><a href="#两层层次结构" class="headerlink" title="两层层次结构"></a>两层层次结构</h4><p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-2.png" alt="两层数字证书"></p>
+<p>双层层次结构是最常见的。在某些方面，它是一层和三层等级之间的折衷。在此设计中，有一个脱机的根CA，以及一个在线的从属颁发CA. 由于根CA和颁发CA角色是分开的，因此安全级别会提高。但更重要的是，根CA处于脱机状态，因此可以更好地保护根CA的私钥免受攻击。它还提高了可扩展性和灵活性。这是因为可以存在多个从根CA到CA的颁发CA. 这可以让你有CA在不同的地理位置，以及与不同的安全级别。 </p>
+<h4 id="三层层次结构"><a href="#三层层次结构" class="headerlink" title="三层层次结构"></a>三层层次结构</h4><p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/ca-3.png" alt="三层数字证书"></p>
+<p>具体而言，两层层次结构之间的区别在于第二层位于根CA和颁发CA之间。此CA的放置可能有几个不同的原因。第一个原因是将第二层CA用作策略CA，换句话说，策略CA配置为向 “颁发CA” 颁发证书，该证书受其颁发的证书类型的限制。策略CA也可以仅用作管理边界。换句话说，您只从“策略CA”的下属颁发某些证书，并在颁发证书之前执行某种级别的验证，但该策略仅从管理而非技术角度强制执行。</p>
+<p>添加第二层的另一个原因是，如果由于密钥泄露而需要撤销多个CA，则可以在第二层级别执行它，从而使其他“从根分支”可用。应该注意的是，此层次结构中的第二层CA可以像Root一样保持脱机状态。</p>
+<h4 id="信任链"><a href="#信任链" class="headerlink" title="信任链"></a>信任链</h4><p>由于CA的多层结构，会产生信任链</p>
+<p>当您从商业CA（也就是要求具有公信力的CA中心）获得公钥证书时，您的证书将与证书链相关联，或者有时称为信任链。链中的证书数量取决于CA的层次结构。下图显示了双层CA的证书链。所有者&#x2F;用户证书由颁发CA签名，颁发CA证书由根CA签名。根CA的证书是自签名的。</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.gif" alt="信任链"></p>
+<p>在用户通过浏览器或程序验证证书期间，浏览器需要通过查找上一个颁发CA或中间CA的公钥来验证签名。该过程将继续，直到达到根证书。根CA是自签名的，最后必须由浏览器信任。浏览器将所有知名的CA根证书保存在其信任库中。</p>
+<p>浏览器的信任库中只会存有知名的根CA，颁发CA或者中间CA不会放在信任库中，因此浏览器在验证时，由下自上一直找到根CA，确保根CA是可信任的即可验证安全</p>
+<p><strong>其实多层次的CA结构中，颁发CA或中间CA的出现是为了根CA的安全和方便CA的管理，有了颁发CA或者中间CA，根CA可以脱机管理，从而保证根CA的私钥安全</strong></p>
+<h4 id="验证终端实体证书"><a href="#验证终端实体证书" class="headerlink" title="验证终端实体证书"></a>验证终端实体证书</h4><blockquote>
+<p>看一个浏览器验证终端数字证书的过程</p>
+</blockquote>
+<p>终端实体证书(要验证的数字证书)的信任从证书路径回溯，通过从属 CA 直到根 CA。向 Web 浏览器或其他客户端呈现了终端实体证书时，它会尝试构建信任链。例如，它可能会检查证书的<em>颁发者可分辨名称</em> 和<em>主题可分辨名称</em> 是否与颁发 CA 证书的相应字段匹配。匹配将在层次结构上的每个后续级别继续进行，直到客户端到达其信任存储中包含的受信任根。</p>
+<p>信任存储是浏览器或操作系统包含的受信任 CA 的库。对于私有 PKI，组织的 IT 部门必须确保每个浏览器或系统之前已将私有根 CA （即私人团体和组织自建的CA中心的自签名数字证书）添加到其信任存储中。否则将无法验证证书路径，导致客户端错误。</p>
+<p>下图显示了在向浏览器提供终端实体 X.509 证书时，浏览器遵循的验证路径。请注意，终端实体证书缺乏签名颁发机构，仅用于对拥有该证书的实体进行身份验证。</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/chain-of-trust.png" alt="信任链"></p>
+<p>浏览器检查终端实体证书。浏览器发现证书提供了来自从属 CA（级别 3）的签名作为其信任凭证。从属 CA 的证书必须包含在同一 PEM 文件中。或者，它们也可以位于包含构成信任链的证书的单独文件中。找到这些内容后，浏览器会检查从属 CA（级别 3）的证书，并发现它提供了来自从属 CA（级别 2）的签名。接下来，从属 CA（级别 2）提供了来自根 CA（级别 1）的签名作为其信任凭证。如果浏览器发现其信任存储中预装的私有根 CA 证书的副本，它会确认终端实体证书可信</p>
+<p>通常，浏览器还会根据证书吊销列表 (CRL) 检查每个证书。已过期、已吊销或配置错误的证书将被拒绝，验证失败</p>
+<h2 id="数字证书的分类"><a href="#数字证书的分类" class="headerlink" title="数字证书的分类"></a>数字证书的分类</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">从证书的用途来看，数字证书可分为<span class="strong">**签名证书**</span>和<span class="strong">**加密证书**</span>。签名证书主要用于对用户信息进行签名，以保证信息完整性和行为的不可抵赖；加密证书主要用于对用户传送信息进行加密，以保证信息的机密性。</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="签名证书"><a href="#签名证书" class="headerlink" title="签名证书"></a>签名证书</h3><p> 签名时使用，仅仅用来验证身份使用，其公钥和私钥均由A自己产生，并且由自己保管，CA不负责其保管任务。</p>
+<p>CA负责的仅仅是给你颁发一个签名证书，证书里面包含有你的身份信息和用于验证的公钥（公钥就是你自己生成的密钥对里的那个公钥，CA不会给你生成），这样当别人验证签名(验签)时，可以通过数字证书来确认你是不是本人</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetSignKey.jpg" alt="签名证书"></p>
+<h3 id="加密证书"><a href="#加密证书" class="headerlink" title="加密证书"></a>加密证书</h3><p>加密证书在传递加密数据时使用，其私钥和公钥由CA产生，并由CA保管（存根）。</p>
+<p>注意，加密证书的密钥对不是由你自己生成的，而是由CA产生（实际上不是CA，是KMC产生后交给CA），产生之后，将加密证书连同密钥对交给你，也就是说，加密密钥对在CA那边会存根一份，你自己保留一份，加密证书中存放的就是密钥对中的公钥，私钥不能外流</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/GetEncriptionKey.jpg" alt="加密证书"></p>
+<p>这是割裂开的两个申请流程，实际上加密证书和签名证书可以同时申请，一个流程搞定</p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications.jpg" alt="双证书申请"></p>
+<p><img src="/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/DoubleCertifications2.jpg" alt="双证书申请"></p>
+<p>PKI中使用双证书、即双密钥，双密钥是指签名密钥对与加密密钥对，从本质上说，两个密钥对都是非对称密钥对，因此，都可以用来作非对称加解密，然而为什么需要双密钥呢？这必须从两个密钥的用法说起。<br>签名密钥对用于数据的完整性检测，保证防伪造与防抵赖，签名私钥的遗失，并不会影响对以前签名数据的验证，因此，签名私钥无须备份，因此，签名密钥不需要也不应该需要第三方来管理，完全由持有者自己产生；而加密密钥对用于数据的加密保护，若加密私钥遗失，将导致以前的加密数据无法解密，这在实际应用中是无法接受的，加密私钥应该由可信的第三方（即通常所说的CA）来备份，以保证加密数据的可用性，因此，加密密钥对可以由第三方来产生，并备份。<br>由于签名密钥与加密密钥的使用与管理上的不同，决定了双证书使用的合理性与必然性</p>
+<br>
+
+<br>
+
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><blockquote>
+<p>若链接失效请参考离线版</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011068702/article/details/73357150">深入理解加密、解密、数字签名（签名证书、加密证书）的组成和数字证书</a>—————</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/JeffreySun/archive/2010/06/24/1627247.html">数字证书原理</a>———</p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1701743">数字签名和数字证书的前世今生</a>————————————————————————–</p>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc962029(v=technet.10)?redirectedfrom=MSDN">微软大法介绍数字证书</a>—————————————-</p>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html">数字签名是什么？</a>———————————————————————————————</p>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html">密码学笔记</a>——————————————————————————————————</p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/sunsky303/p/11194801.html">1.数字证书与证书颁发机构</a>————————————–</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/42bf7c4d6ab8">2.什么是数字证书</a>————————————————–</p>
+<p><a target="_blank" rel="noopener" href="https://zhaohuabing.com/post/2020-03-19-pki/">3.数字证书原理</a>—————————————————–</p>
+<p><a target="_blank" rel="noopener" href="https://docs.aws.amazon.com/zh_cn/acm-pca/latest/userguide/ca-hierarchy.html">CA层级结构</a>———————————————————-</p>
+<p><a target="_blank" rel="noopener" href="https://program-think.blogspot.com/2010/02/introduce-digital-certificate-and-ca.html">数字证书及 CA 的扫盲介绍</a>————————————</p>
+<p><a target="_blank" rel="noopener" href="https://wenku.baidu.com/view/89796e20524de518974b7d60.html">双证书体系</a>———————————————————–</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="清河 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="清河 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>清河
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lasonneil.github.io/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/" title="数字证书是什么">https://lasonneil.github.io/2020/12/24/posts/数字证书是什么/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="tag"># 密码学</a>
+              <a href="/tags/%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D/" rel="tag"># 数字签名</a>
+              <a href="/tags/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6/" rel="tag"># 数字证书</a>
+              <a href="/tags/CA/" rel="tag"># CA</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/12/24/posts/%E5%85%B3%E4%BA%8ESSH/" rel="prev" title="关于SSH">
+                  <i class="fa fa-angle-left"></i> 关于SSH
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/12/24/posts/%E5%AF%86%E7%A0%81%E5%AD%A6/" rel="next" title="密码学">
+                  密码学 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">清河</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://blog-remark-system.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"locale":null,"placeholder":"Welcome to comment","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"meta":["nick","mail","link"],"login":"enable","pageSize":10,"el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/2020/12/24/posts/%E6%95%B0%E5%AD%97%E8%AF%81%E4%B9%A6%E6%98%AF%E4%BB%80%E4%B9%88/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lasonneil.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="链表节点的结构体定义理解和不完整类型声明">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表节点的结构体定义问题">
+<meta property="og:url" content="https://lasonneil.github.io/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="清河的博客">
+<meta property="og:description" content="链表节点的结构体定义理解和不完整类型声明">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-04T21:29:35.000Z">
+<meta property="article:modified_time" content="2024-01-18T02:20:35.488Z">
+<meta property="article:author" content="清河">
+<meta property="article:tag" content="C语言">
+<meta property="article:tag" content="结构体">
+<meta property="article:tag" content="不完整类型声明">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lasonneil.github.io/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lasonneil.github.io/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/","path":"2023/11/05/posts/链表节点的结构体定义问题/","title":"链表节点的结构体定义问题"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>链表节点的结构体定义问题 | 清河的博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="https://blog-remark-system.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">清河的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">庸人自处之所</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-game"><a href="/game/" rel="section"><i class="fa fa-gamepad fa-fw"></i>game</a></li><li class="menu-item menu-item-diaries"><a href="/categories/%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-book fa-fw"></i>diaries</a></li><li class="menu-item menu-item-transport"><a href="/transport/" rel="section"><i class="fa fa-fighter-jet fa-fw"></i>transport</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98"><span class="nav-text">链表节点的结构体定义问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E7%BB%93%E6%9E%84%E4%BD%93%E5%86%85%E9%83%A8%E7%9A%84%E5%A4%A7%E5%B0%8F%E6%98%AF%E7%A1%AE%E5%AE%9A%E7%9A%84"><span class="nav-text">1. 结构体内部的大小是确定的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%BC%96%E8%AF%91%E4%BC%9A%E8%87%AA%E5%B7%B1%E6%9B%B4%E6%96%B0%E7%BB%93%E6%9E%84%E4%BD%93%E7%9A%84%E5%A3%B0%E6%98%8E"><span class="nav-text">2. 编译会自己更新结构体的声明</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="清河"
+      src="/images/avatar/%E7%9C%8B%E5%B1%B1%E7%9C%8B%E6%B5%B7.jpg">
+  <p class="site-author-name" itemprop="name">清河</p>
+  <div class="site-description" itemprop="description">要 起而行之</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lasonneil.github.io/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar/%E7%9C%8B%E5%B1%B1%E7%9C%8B%E6%B5%B7.jpg">
+      <meta itemprop="name" content="清河">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清河的博客">
+      <meta itemprop="description" content="要 起而行之">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="链表节点的结构体定义问题 | 清河的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          链表节点的结构体定义问题
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-04 21:29:35" itemprop="dateCreated datePublished" datetime="2023-11-04T21:29:35Z">2023-11-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-18 02:20:35" itemprop="dateModified" datetime="2024-01-18T02:20:35Z">2024-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>4 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>链表节点的结构体定义理解和不完整类型声明</p>
+<span id="more"></span>
+
+<h3 id="链表节点的结构体定义问题"><a href="#链表节点的结构体定义问题" class="headerlink" title="链表节点的结构体定义问题"></a>链表节点的结构体定义问题</h3><p>在单向链表的学习中，一直忽略了一个技术问题，先看链表节点的结构体定义</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>仔细观察上述结构体定义，会发现在定义结构体 <code>struct node</code> 时，在其中又定义了一个<code>struct node *next</code>, 可是明明这个时候，<code>struct node</code> 的类型还没有定义完成，就在内部使用自己的类型，有点让人难以理解，感觉很奇怪</p>
+<p>其实在C语言中，你可以定义结构体来表示链表节点，链表节点结构体包含了数据和指向下一个节点的指针，通常，你可以在定义节点类型之前使用正在定义的类型，但是需要使用指针来解决类型未定义的问题</p>
+<p>其实，这种定义方式，和<strong>编译器</strong>本身的 <strong>处理方式</strong> 紧密相关</p>
+<h4 id="1-结构体内部的大小是确定的"><a href="#1-结构体内部的大小是确定的" class="headerlink" title="1. 结构体内部的大小是确定的"></a>1. 结构体内部的大小是确定的</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> *<span class="title">next</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>首先，<code>Node</code> 这个结构体的大小是可以明确的, <code>int data</code> 是4个字节，<code>struct Node *next</code> 也是4个字节(32位系统)，因为它仅仅只是一个指针变量，大小是确定的，因此整个<code>Node</code> 的大小也是确定的，总共是8个字节大小(32位系统)，包括其中存放的数据类型，一个是数据域部分的数据，一个是指针域部分的指针，这对于编译器来说是明确的</p>
+<p>错误的写法其实是下面这种:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> data;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Node</span> <span class="title">subnode</span>;</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>其中<code>Node</code>的类型还正在定义中，在 <code>Node</code> 里面又定义<code>struct Node</code>类型的变量，编译器根本无法确定它的大小是多少，编译时就会出错，而且这是很明显的递归定义，是错误的定义形式</p>
+<p><strong>总之，你可以在定义节点类型之前使用正在定义的类型，只要你使用指针来解决类型未定义的问题。这是因为指针的大小是已知的，即使它指向的类型尚未完全定义</strong></p>
+<h4 id="2-编译会自己更新结构体的声明"><a href="#2-编译会自己更新结构体的声明" class="headerlink" title="2. 编译会自己更新结构体的声明"></a>2. 编译会自己更新结构体的声明</h4><p>实际上，这种方式称为 <strong>不完整类型声明</strong>，典型的例子就是结构体中的自引用指针</p>
+<p>对于这种声明方式，编译器有自己的处理步骤：</p>
+<ul>
+<li><strong>分配足够的内存空间</strong>：当编译器遇到不完整类型声明时，他知道其中的指针域变量是一个指针，但是无法确定指针指向的内存的确定大小，因为结构体的定义尚未完整，因为结构体本身的大小是确定的，内部各个成员的大小也是确定的，所以编译器会为其分配足够的内存大小</li>
+<li><strong>生成代码</strong>：编译器会生成与结构体的定义<strong>不完整的部分的相关代码，相当于中间部分</strong></li>
+<li><strong>结构体的完整定义</strong>：当编译器走到完整的结构体定义结束后（通常在后续代码中或在不同的源文件中），它会了解结构体的确切布局和字段的大小</li>
+<li><strong>更新不完整类型声明</strong>：编译器这时会回头更新之前的<strong>不完整类型声明</strong>，也就是中间部分</li>
+<li><strong>生成正确的机器代码</strong>：现在，编译器具有完整的结构体定义，可以生成正确的机器代码，以确保结构体的成员被正确访问和操作</li>
+</ul>
+<p><strong>总之，编译器在编译过程中通过逐步处理不完整类型声明来处理自引用结构体。它为这些声明分配足够的内存以容纳指向相同类型的指针，然后在结构体的完整定义可用时，更新这些声明以反映完整的结构体定义，并生成正确的机器代码以处理结构体的成员。这使得在链表节点等数据结构中引用自身成为可能</strong></p>
+<blockquote>
+<p>简单来说，对于不完整类型声明，编译器在编译的过程中会进行更新，由不完整到完整，由不明确到明确，最终生成确定的定义和声明代码</p>
+</blockquote>
+<p>参考：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://chat.openai.com/share/9184c02c-b45e-473f-8467-037d86a72d72">Chatgpt的问答</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaojianliu/articles/8735663.html">不完全类型和复杂声明</a></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="清河 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="清河 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>清河
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lasonneil.github.io/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/" title="链表节点的结构体定义问题">https://lasonneil.github.io/2023/11/05/posts/链表节点的结构体定义问题/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"># C语言</a>
+              <a href="/tags/%E7%BB%93%E6%9E%84%E4%BD%93/" rel="tag"># 结构体</a>
+              <a href="/tags/%E4%B8%8D%E5%AE%8C%E6%95%B4%E7%B1%BB%E5%9E%8B%E5%A3%B0%E6%98%8E/" rel="tag"># 不完整类型声明</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/23/diaries/2023%E5%B9%B410%E6%9C%8822%E6%97%A5%E5%B0%8F%E8%AE%B0/" rel="prev" title="2023年10月22日小记">
+                  <i class="fa fa-angle-left"></i> 2023年10月22日小记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/11/05/posts/%E5%9F%BA%E7%A1%80%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90/" rel="next" title="基础排序算法解析">
+                  基础排序算法解析 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">清河</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://blog-remark-system.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"locale":null,"placeholder":"Welcome to comment","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"meta":["nick","mail","link"],"login":"enable","pageSize":10,"el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/2023/11/05/posts/%E9%93%BE%E8%A1%A8%E8%8A%82%E7%82%B9%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E9%97%AE%E9%A2%98/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

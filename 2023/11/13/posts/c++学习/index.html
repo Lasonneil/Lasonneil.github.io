@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.0.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"lasonneil.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="c++的一点学习笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++学习">
+<meta property="og:url" content="https://lasonneil.github.io/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="清河的博客">
+<meta property="og:description" content="c++的一点学习笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-12T20:24:01.000Z">
+<meta property="article:modified_time" content="2024-01-18T02:20:35.126Z">
+<meta property="article:author" content="清河">
+<meta property="article:tag" content="c++">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://lasonneil.github.io/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://lasonneil.github.io/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/","path":"2023/11/13/posts/c++学习/","title":"c++学习"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>c++学习 | 清河的博客</title>
+  
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="https://blog-remark-system.vercel.app/">
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">清河的博客</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">庸人自处之所</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-game"><a href="/game/" rel="section"><i class="fa fa-gamepad fa-fw"></i>game</a></li><li class="menu-item menu-item-diaries"><a href="/categories/%E6%97%A5%E8%AE%B0/" rel="section"><i class="fa fa-book fa-fw"></i>diaries</a></li><li class="menu-item menu-item-transport"><a href="/transport/" rel="section"><i class="fa fa-fighter-jet fa-fw"></i>transport</a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%BC%95%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="nav-text">1. 引用语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%87%BD%E6%95%B0%E7%9A%84%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"><span class="nav-text">2. 函数的默认参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%87%BD%E6%95%B0%E7%9A%84%E5%8D%A0%E4%BD%8D%E5%8F%82%E6%95%B0"><span class="nav-text">3. 函数的占位参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"><span class="nav-text">4. 函数重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%B0%81%E8%A3%85"><span class="nav-text">5. 封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-c-%E5%92%8Cc-%E4%B8%AD%E5%AE%9E%E4%BE%8B%E5%8C%96%E7%9A%84%E4%B8%8D%E5%90%8C"><span class="nav-text">6. c++和c#中实例化的不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E8%AE%BF%E9%97%AE%E6%9D%83%E9%99%90"><span class="nav-text">7. 访问权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0-%E6%9E%84%E9%80%A0%E5%99%A8-%E4%B8%8E%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="nav-text">8. 构造函数(构造器)与析构函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#8-1-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-text">8.1 构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#8-1-1-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95%EF%BC%9A-%E7%B1%BB%E5%90%8D"><span class="nav-text">8.1.1 构造函数语法： 类名() {}</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-1-2-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E7%B1%BB%E4%B8%8E%E8%B0%83%E7%94%A8"><span class="nav-text">8.1.2 构造函数的分类与调用</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#8-1-2-%E6%B7%B1%E6%8B%B7%E8%B4%9D%E4%B8%8E%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="nav-text">8.1.2 深拷贝与浅拷贝</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-2-%E6%9E%90%E6%9E%84%E5%87%BD%E6%95%B0"><span class="nav-text">8.2 析构函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%88%97%E8%A1%A8"><span class="nav-text">9. 初始化列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-%E9%9D%99%E6%80%81%E6%88%90%E5%91%98"><span class="nav-text">10. 静态成员</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="清河"
+      src="/images/avatar/%E7%9C%8B%E5%B1%B1%E7%9C%8B%E6%B5%B7.jpg">
+  <p class="site-author-name" itemprop="name">清河</p>
+  <div class="site-description" itemprop="description">要 起而行之</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">50</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://lasonneil.github.io/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar/%E7%9C%8B%E5%B1%B1%E7%9C%8B%E6%B5%B7.jpg">
+      <meta itemprop="name" content="清河">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="清河的博客">
+      <meta itemprop="description" content="要 起而行之">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="c++学习 | 清河的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          c++学习
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-12 20:24:01" itemprop="dateCreated datePublished" datetime="2023-11-12T20:24:01Z">2023-11-12</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2024-01-18 02:20:35" itemprop="dateModified" datetime="2024-01-18T02:20:35Z">2024-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/#waline" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" data-path="/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>14 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>c++的一点学习笔记<span id="more"></span></p>
+<h3 id="1-引用语法"><a href="#1-引用语法" class="headerlink" title="1. 引用语法"></a>1. 引用语法</h3><p>引用是一种在已存在的变量或对象上创建的别名。引用提供了对现有变量的另一种名称，通过引用可以直接访问原始变量</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">type &amp;ref_name = original_variable;</span><br></pre></td></tr></table></figure>
+
+<p>其中：</p>
+<ul>
+<li><code>type</code> 是原始变量的类型。</li>
+<li><code>ref_name</code> 是引用的名称。</li>
+<li><code>original_variable</code> 是已存在的变量。</li>
+</ul>
+<ol>
+<li>引用必须在定义时初始化，一旦引用被初始化，它将一直引用相同的对象，不能改变引用的目标，即初始化后不可以发生改变</li>
+<li>引用与原始变量时同一份数据，对引用的修改会直接影响原始变量，因为他们引用同一块内存</li>
+<li>引用可以用于函数参数，引用经常用于函数参数，以便通过引用传递数据而不是通过复制</li>
+<li>引用可以作为返回值，函数可以返回引用，使得返回值成为原始变量的别名</li>
+</ol>
+<p><strong>对于引用的理解，实际上这种语法的本质就是为变量取了一个别名，或者说为 原来有名字的内存空间 又起了一个别名，语法不难理解，实际上在编译时，这种引用的语法实际上可能会由编译器内部去转化为指针的用法，虽然实际上使用它时和指针的用法有一定区别，但这都是基于方便编程，方便修改变量(引用的设计估计就是为了方便修改变量，指针还是比较麻烦的)而设计的语法，我们只要保证使用引用的时候，一有确定的内存空间，二有合理的别名，这种对于原名，别名和内存空间的对应自然有编译器为我们代劳</strong></p>
+<p><strong>引用的本质用指针的角度来看，是一个指针常量，int * const ref &#x3D; &amp;a，当内部发现是引用时，自动依据编译方式进行转换</strong></p>
+<p><strong>在做一遍解释，引用在底层可能会被实现为指针，但这是编译器的实现细节，这并不影响引用在语法上的特性。在使用引用时，程序员无需关心它是否被实现为指针，只需要按照引用的语法规则使用即可。引用的主要目的是提供一种更直观、更易读的代码方式，同时避免了指针可能引发的一些问题。</strong></p>
+<h3 id="2-函数的默认参数"><a href="#2-函数的默认参数" class="headerlink" title="2. 函数的默认参数"></a>2. 函数的默认参数</h3><p>函数的默认参数值必须<strong>在函数声明和定义的地方同时指定</strong>。也就是说，如果你在函数声明时指定了默认参数值，那么在函数的定义时也必须再次指定默认参数值。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">(type parameter1 = default_value1, type parameter2 = default_value2, ...)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 函数体</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中：</p>
+<ul>
+<li><code>return_type</code> 是函数的返回类型。</li>
+<li><code>function_name</code> 是函数的名称。</li>
+<li><code>type</code> 是参数的类型。</li>
+<li><code>parameter1</code>, <code>parameter2</code>, … 是函数的参数。</li>
+<li><code>default_value1</code>, <code>default_value2</code>, … 是参数的默认值。</li>
+</ul>
+<p>如果某个位置参数有默认值，那么从这个位置往后，从左向右，必须都要有默认值</p>
+<p><strong>注意，在C++中，函数的声明和定义不能同时带有默认参数，这是由语法规则决定的，记住是规则，不能同时带默认参数就对了</strong></p>
+<p>默认参数的值只能在函数的声明或者定义中的一个地方指定，而不能同时在两个地方指定。这是为了避免在不同的编译单元中可能出现的冲突问题。如果同时在声明和定义中都指定默认参数值，将导致编译错误。</p>
+<p>这种限制确保了在不同的编译单元中对函数的一致性理解，”不同的编译单元中对函数的一致性理解” 指的是在 C++ 程序中，源代码可能被分成多个文件进行编译，每个文件被称为一个编译单元（translation unit）。编译单元是独立进行编译的基本单位，最终这些编译单元将被链接在一起形成可执行文件。</p>
+<p>在这个背景下，对函数的一致性理解意味着在不同的编译单元中对同一个函数的声明和定义的理解是一致的。如果不同的编译单元中对同一个函数的声明和定义的默认参数值不一致，可能导致一些问题。</p>
+<p>考虑以下情况：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件1.cpp</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y = <span class="number">42</span>)</span></span>;  <span class="comment">// 在声明中指定默认参数值</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 文件2.cpp</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">foo</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y = <span class="number">24</span>)</span> </span>&#123;  <span class="comment">// 在定义中再次指定默认参数值</span></span><br><span class="line">    <span class="comment">// 函数实现</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在这个例子中，文件1.cpp 中的声明和文件2.cpp 中的定义对于 <code>foo</code> 函数的默认参数值的理解是不一致的。当这两个文件被分别编译后，如果链接在一起，可能会导致不一致的行为。这种不一致可能在程序运行时产生难以预测的结果。</p>
+<p>为了避免这种潜在的问题，C++ 的语法规则要求默认参数值只能在声明或定义的其中一个地方指定，以确保在链接时对函数的一致性理解。</p>
+<p><strong>函数默认值这种用法，可以使函数调用更加灵活，不需要为每个参数都提供值，我们可以只为我们关心的参数提供值，而其他的参数就保持默认</strong></p>
+<h3 id="3-函数的占位参数"><a href="#3-函数的占位参数" class="headerlink" title="3. 函数的占位参数"></a>3. 函数的占位参数</h3><p>函数的占位参数是指在函数声明中省略参数名，只提供参数类型的一种方式。这种语法通常在函数声明时用于指示函数接受一定数量的参数，但在函数体内并不使用这些参数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明中使用占位参数，省略参数名</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">functionName</span><span class="params">(<span class="type">int</span> a, <span class="type">float</span> b, <span class="type">int</span>)</span></span>;  <span class="comment">// 第三个参数，省略了参数名，占位用</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="4-函数重载"><a href="#4-函数重载" class="headerlink" title="4. 函数重载"></a>4. 函数重载</h3><p>函数重载指在同一个作用域内定义多个函数，他们有相同的名称但参数列表不同，参数列表的不同可能包括<strong>参数的类型、数量或者顺序</strong>，在调用这个函数时，编译器会根据实际传递的参数类型，数量等信息来选择匹配的函数</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数声明1</span></span><br><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">(type1 parameter1, type2 parameter2, ...)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数声明2（重载）</span></span><br><span class="line"><span class="function">return_type <span class="title">function_name</span><span class="params">(type3 parameter1, type4 parameter2, ...)</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>其中：</p>
+<ul>
+<li><code>return_type</code> 是函数的返回类型。</li>
+<li><code>function_name</code> 是函数的名称。</li>
+<li><code>type1</code>, <code>type2</code>, … 是参数类型</li>
+</ul>
+<p>对于常量引用和普通引用，是可以作为函数重载的条件的</p>
+<p>对于默认参数，作为函数重载的条件时，会出现二义性</p>
+<h3 id="5-封装"><a href="#5-封装" class="headerlink" title="5. 封装"></a>5. 封装</h3><p>封装是c++面向对象三大特性之一</p>
+<p>封装的意义：</p>
+<ul>
+<li>将属性和行为作为一个整体，表现生活中的事物</li>
+<li>将属性和行为加以权限控制</li>
+</ul>
+<p><strong>语法：</strong> <code>class 类名 &#123;访问权限： 属性/行为 &#125;</code></p>
+<h3 id="6-c-和c-中实例化的不同"><a href="#6-c-和c-中实例化的不同" class="headerlink" title="6. c++和c#中实例化的不同"></a>6. c++和c#中实例化的不同</h3><p>相同的语法如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">test</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="type">int</span> a;</span><br><span class="line">  <span class="type">int</span> b;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="type">void</span> <span class="title">test_func</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot;hello world!&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//c++</span></span><br><span class="line">test object1;</span><br><span class="line"></span><br><span class="line"><span class="comment">//c#</span></span><br><span class="line">test object1;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>对于<code>test object1</code>这句语句，在c++中表示创建了一个对象或者实例，而在c#中仅仅声明了一个引用，并没有创建实例或者对象，需要配合使用new关键字使用</p>
+<h3 id="7-访问权限"><a href="#7-访问权限" class="headerlink" title="7. 访问权限"></a>7. 访问权限</h3><ul>
+<li><p>公共权限 public：类内可以访问，类外也可以访问</p>
+</li>
+<li><p>保护权限 protected：类内可以访问，类外不可以访问；儿子可以访问父亲的保护内容</p>
+</li>
+<li><p>私有权限 private：类内可以访问，类外不可以访问；儿子不可以访问父亲的私有内容</p>
+</li>
+</ul>
+<h3 id="8-构造函数-构造器-与析构函数"><a href="#8-构造函数-构造器-与析构函数" class="headerlink" title="8. 构造函数(构造器)与析构函数"></a>8. 构造函数(构造器)与析构函数</h3><p>对象的 <strong>初始化和清理</strong> 是两个非常中药的安全问题</p>
+<p>c++利用了构造函数和析构函数解决上述问题，这两个哈数将会被编译器自动调用，完成对象初始化和清理工作，对象的初始化和清理工作是编译器强制要我们做的事情，因此如果我们不提供构造和析构，编译器会提供，编译器提供的构造函数和析构函数是空函数</p>
+<ul>
+<li>构造函数：主要作用在于创建对象时为对象的成语属性赋值，构造函数由编译器自动调用，无需手动调用</li>
+<li>析构函数：主要作用在于对象销毁前系统自动调用，执行一些清理工作</li>
+</ul>
+<h4 id="8-1-构造函数"><a href="#8-1-构造函数" class="headerlink" title="8.1 构造函数"></a>8.1 构造函数</h4><h5 id="8-1-1-构造函数语法：-类名"><a href="#8-1-1-构造函数语法：-类名" class="headerlink" title="8.1.1 构造函数语法： 类名() {}"></a>8.1.1 构造函数语法： <code>类名() &#123;&#125;</code></h5><ol>
+<li>构造函数，没有返回值也不写void</li>
+<li>函数名称与类名相同</li>
+<li><strong>构造函数可以有参数，因此可以发生重载</strong></li>
+<li>程序在调用对象时候会自动调用构造，无需手动调用，而且只会调用一次</li>
+</ol>
+<blockquote>
+<p>对于构造函数的访问权限问题：</p>
+<ul>
+<li>public：如果构造函数时public的，那么在任何地方都可以创建该类的对象，这在大多数情况下是合适的，因为允许类的实例化</li>
+<li>private：如果构造函数时private的，那么只有该类内部的成员函数或友元函数才能创建该类的对象，这种常用于实现<strong>单例模式或工厂模式</strong>等，确保只有受控的方式可以创建对象</li>
+<li>protected：如果构造对象时protected的，那么只有该类的派生类可以访问构造函数，这在实现继承层次结构时可能会用</li>
+</ul>
+<p>选择构造函数的访问权限通常是根据设计需求和类的使用场景而定</p>
+</blockquote>
+<h5 id="8-1-2-构造函数的分类与调用"><a href="#8-1-2-构造函数的分类与调用" class="headerlink" title="8.1.2 构造函数的分类与调用"></a>8.1.2 构造函数的分类与调用</h5><p>两种分类方式：</p>
+<ul>
+<li>按参数分为：有参构造和无参构造</li>
+<li>按类型分：普通构造和拷贝构造</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Person</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 有参构造与无参构造</span></span><br><span class="line">    <span class="built_in">Person</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Person的无参构造函数调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">Person</span>(<span class="type">int</span> a)</span><br><span class="line">    &#123;</span><br><span class="line">        age = a;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Person的有参构造函数调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 拷贝构造函数</span></span><br><span class="line">    <span class="built_in">Person</span> (<span class="type">const</span> Person &amp;p)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 将传入的人身上的所有属性，拷贝到我身上</span></span><br><span class="line">        age = p.age;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    ~<span class="built_in">Person</span>()</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Person的析构函数调用&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>构造函数三种调用方式：</p>
+<ul>
+<li>括号法</li>
+<li>显式法</li>
+<li>隐式转换法</li>
+</ul>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 括号法</span></span><br><span class="line">Person p; <span class="comment">// 默认构造函数调用</span></span><br><span class="line"><span class="function">Person <span class="title">p2</span><span class="params">(<span class="number">10</span>)</span></span>; <span class="comment">// 有参构造函数</span></span><br><span class="line"><span class="function">Person <span class="title">p3</span><span class="params">(p2)</span></span>; <span class="comment">// 拷贝构造函数</span></span><br><span class="line"><span class="comment">// 调用默认构造函数时，不要加(), 编译器会认为这是函数声明</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 显式法</span></span><br><span class="line">Person p1; </span><br><span class="line">Person p2 = <span class="built_in">Person</span>(<span class="number">10</span>); <span class="comment">// 有参构造</span></span><br><span class="line">Person p2 = <span class="built_in">Person</span>(p2); <span class="comment">// 拷贝构造</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Person(10); 这条语句会创建出一个匿名对象，c++早期版本是需要调用两次构造函数来完成初始化，就是创立黎明对象调用一次，初始化变量又调用一次，后来优化就只需要调用一次，匿名对象直接变成有名对象</span></span><br><span class="line"><span class="comment">// 个人理解是这样，如果有不正确的希望有大佬可以帮忙指出来，谢谢~</span></span><br><span class="line"><span class="comment">// 要明白 初始化 和 赋值 的区别</span></span><br><span class="line"><span class="comment">//如果用匿名对象 初始化 另外一个同类型的对象, 匿名对象 转成有名对象</span></span><br><span class="line"><span class="comment">//如果用匿名对象 赋值给 另外一个同类型的对象, 匿名对象 被析构</span></span><br><span class="line"><span class="comment">//c++早期版本是要调用两次构造函数来完成初始化的，现在优化版本只要调用一次，提高了效率。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.隐式转换法</span></span><br><span class="line">Person p4 = <span class="number">10</span>； <span class="comment">// 相当于Person p4 = Person(10); 编译器会隐式的转成这种形式，会帮你做这种事情</span></span><br><span class="line">Person p5 = p4; </span><br></pre></td></tr></table></figure>
+
+
+
+<p>拷贝构造函数被调用的时机：</p>
+<ul>
+<li>使用一个已经创建完毕的对象(不是匿名对象)来初始化一个新对象</li>
+<li>值传递的方式给函数参数传值</li>
+<li>值方式返回局部对象</li>
+</ul>
+<blockquote>
+<p>对于值方式返回局部对象，貌似是返回是回拷贝给一个匿名对象，这个时候会调用拷贝构造函数，但是根据实际情况来看，貌似现在已经不再产生临时对象，不调用拷贝构造函数，编译器做了优化，至少gcc&#x2F;g++是这样的，如果加上<code>-fno-elide-constructors</code>的选项，关闭编译器的优化，还是会产生匿名对象，调用拷贝构造函数</p>
+</blockquote>
+<p>弄清楚拷贝构造函数什么时候会被调用也是非常重要的，自己需要清楚这些函数的调用时机和调用次数等等，做到胸有成竹，心中有数</p>
+<p>默认情况下，c++编译器至少会给一个类添加3个函数，默认构造函数，默认析构函数，默认拷贝构造函数</p>
+<p>如果用户定义有参构造函数，c++不再提供默认无参构造，但是会提供默认拷贝构造</p>
+<p>如果用户定义拷贝构造函数，c++不会再提供其他构造函数</p>
+<h5 id="8-1-2-深拷贝与浅拷贝"><a href="#8-1-2-深拷贝与浅拷贝" class="headerlink" title="8.1.2 深拷贝与浅拷贝"></a>8.1.2 深拷贝与浅拷贝</h5><p>深浅拷贝是面试经典问题，也是常见的一个坑</p>
+<p><strong>浅拷贝</strong>：简单的赋值拷贝操作(编译器提供的拷贝构造函数都是浅拷贝)</p>
+<p><strong>深拷贝</strong>：在堆区重新申请空间，进行拷贝操作</p>
+<p>浅拷贝带来的问题就是堆区内存的重复释放，当构造函数中有申请堆区内存，而使用了浅拷贝，在析构是就容易重复释放同一个块内存空间</p>
+<h4 id="8-2-析构函数"><a href="#8-2-析构函数" class="headerlink" title="8.2 析构函数"></a>8.2 析构函数</h4><p>析构函数语法：<code>~类名() &#123;&#125;</code></p>
+<ol>
+<li>析构函数，没有返回值也不写void</li>
+<li>函数名称与类名相同，在名称前面加上符号<code>~</code></li>
+<li><strong>析构函数不可以有参数，因此不可以发生重载</strong></li>
+<li>程序在对象销毁前会自动调用析构，无需手动调用，而且只会调用一次</li>
+</ol>
+<p>构造函数和析构函数不实现的时候，编译器会默认生成空实现</p>
+<p>构造函数和析构函数都不需要写return</p>
+<h3 id="9-初始化列表"><a href="#9-初始化列表" class="headerlink" title="9. 初始化列表"></a>9. 初始化列表</h3><p>在之前学习的构造函数中，主要是对类中的属性做初始化的操作，新的这个语法，初始化列表主要用途也是给类中的属性进行一个初始化的操作, 语法：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">构造函数(): 属性<span class="number">1</span>(值<span class="number">1</span>), 属性<span class="number">2</span>(值<span class="number">2</span>)...&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="10-静态成员"><a href="#10-静态成员" class="headerlink" title="10. 静态成员"></a>10. 静态成员</h3><p>静态成员就是在成员变量和成员函数前加上关键字<code>static</code>，称为静态成员，静态成员分为：</p>
+<ul>
+<li>静态成员变量<ul>
+<li>所有对象共享同一份数据</li>
+<li>在编译阶段分配内存</li>
+<li>类内声明，类外初始化</li>
+</ul>
+</li>
+<li>静态成员函数<ul>
+<li>所有对象共享同一个函数</li>
+<li>静态成员函数只能访问静态成员变量</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div>请我一杯咖啡吧！</div>
+  <button>
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="清河 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="清河 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>本文作者： </strong>清河
+  </li>
+  <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://lasonneil.github.io/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/" title="c++学习">https://lasonneil.github.io/2023/11/13/posts/c++学习/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/c/" rel="tag"># c++</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/06/posts/%E9%93%BE%E8%A1%A8%E5%AD%A6%E4%B9%A0/" rel="prev" title="链表的学习">
+                  <i class="fa fa-angle-left"></i> 链表的学习
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">清河</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>站点总字数：</span>
+    <span title="站点总字数">44k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:41</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-CN","enable":true,"serverURL":"https://blog-remark-system.vercel.app/","cssUrl":"https://unpkg.com/@waline/client@v2/dist/waline.css","commentCount":true,"pageview":false,"locale":null,"placeholder":"Welcome to comment","emoji":["https://unpkg.com/@waline/emojis@1.0.1/weibo"],"meta":["nick","mail","link"],"login":"enable","pageSize":10,"el":"#waline","comment":true,"libUrl":"//unpkg.com/@waline/client@v2/dist/waline.js","path":"/2023/11/13/posts/c++%E5%AD%A6%E4%B9%A0/"}</script>
+<link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css">
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() =>
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => 
+    Waline.init(Object.assign({}, CONFIG.waline,{ el: document.querySelector(CONFIG.waline.el) }))
+  );
+});
+</script>
+
+</body>
+</html>

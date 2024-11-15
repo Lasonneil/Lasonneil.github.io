@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>docker设置网络代理</title>
+      <link href="/2024/11/15/posts/docker%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/"/>
+      <url>/2024/11/15/posts/docker%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>  由于国内网络的限制国内众多仓库的关闭，docker无法拉取官方镜像<span id="more"></span></p><p>  Docker 默认情况下不继承系统的环境变量设置（例如 <code>export http_proxy</code>）。因此，即使通过 <code>export http_proxy</code> 配置了代理，Docker 也不会自动使用这些变量。这是因为 Docker 是一个守护进程，其网络配置独立于用户的 Shell 环境。因此即使设置了全局代理，Docker 依然无法直接使用这些代理。</p><p>  正确设置步骤如下(ubuntu):</p><ol><li><p><strong>配置 Docker 的代理文件</strong>：在 <code>/etc/systemd/system/docker.service.d/</code> 下创建 <code>http-proxy.conf</code> 文件，内容如下：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span>Service<span class="punctuation">]</span></span><br><span class="line">Environment=<span class="string">&quot;HTTP_PROXY=http://代理IP:端口号&quot;</span></span><br><span class="line">Environment=<span class="string">&quot;HTTPS_PROXY=http://代理IP:端口号&quot;</span></span><br><span class="line">Environment=<span class="string">&quot;NO_PROXY=localhost,127.0.0.1&quot;</span></span><br></pre></td></tr></table></figure></li><li><p><strong>重启 Docker</strong>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure></li></ol><p>  这样设置后，Docker 应该可以正常通过代理拉取镜像。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> 代理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>未言日</title>
       <link href="/2024/06/19/diaries/%E6%9C%AA%E8%A8%80%E6%97%A5/"/>
       <url>/2024/06/19/diaries/%E6%9C%AA%E8%A8%80%E6%97%A5/</url>

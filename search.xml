@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>如何配置LetsEncrypt并且自动更新证书</title>
+      <link href="/2024/11/30/posts/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AELetsEncrypt%E5%B9%B6%E4%B8%94%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E8%AF%81%E4%B9%A6/"/>
+      <url>/2024/11/30/posts/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AELetsEncrypt%E5%B9%B6%E4%B8%94%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0%E8%AF%81%E4%B9%A6/</url>
+      
+        <content type="html"><![CDATA[<p>在使用服务器搭建网站时，需要给网站域名设置安全证书，来进行<code>https</code>加密传输，保证网站安全<span id="more"></span></p><p>但是我们获取证书一般是在买域名的地方去获取，像我的域名是在阿里云买的，但是他提供的域名证书只有三个月的有效期，需要下载到主机然后手动部署，非常麻烦，我目前的解决方案是通过 <code>Let&#39;s Encrypt</code> 定期自动生成和更新证书，然后实现自动部署</p><p>首先回到机器，下载完成这些动作的客户端，<a href="https://letsencrypt.org/zh-cn/docs/client-options/">网页在这</a></p><p><img src="https://chevereto.tianfu.site:48443/images/2024/11/15/letsencrypt_home.png" alt="letsencrypt home"></p><p><code>Let&#39;s Encrypt</code> 推荐的是<code>Cerbot</code> 客户端，他还推荐了许多其他的</p><p><img src="https://chevereto.tianfu.site:48443/images/2024/11/15/acme_client.png" alt="acme client"></p><p>我用的比较多的是<code>Bash</code> 下的 <code>acme.sh</code> 脚本，<a href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E">脚本使用说明见这里</a> ，总共分三步：</p><h4 id="1-安装客户端"><a href="#1-安装客户端" class="headerlink" title="1. 安装客户端"></a><strong>1. 安装客户端</strong></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1. 下载自动安装客户端</span></span><br><span class="line">curl https://get.acme.sh | sh -s email=my@example.com（填你自己的邮箱就行）</span><br><span class="line"></span><br><span class="line"><span class="comment">#2. 下载下来的是acme.sh脚本和一些文件</span></span><br><span class="line"><span class="comment">#   添加一个alias，可以设定命令别名，不设置的话运行脚本需要带上acme.sh的所在路径</span></span><br><span class="line"><span class="comment">#   在 ~/.bashrc文件中添加下面这一句即可，然后执行 source ~./bashrc</span></span><br><span class="line"><span class="built_in">alias</span> acme.sh=~/.acme.sh/acme.sh</span><br></pre></td></tr></table></figure><h4 id="2-生成证书"><a href="#2-生成证书" class="headerlink" title="2. 生成证书"></a><strong>2. 生成证书</strong></h4><p> 生成证书需要先验证来验证你的域名所有权，方法有很多</p><ul><li><p>DNS记录验证</p><blockquote><p>添加特定的<strong>TXT记录</strong>到域名的DNS解析中，有时也要求添加<strong>CNAME记录</strong>或者<strong>A记录</strong>。验证时，系统会查询域名的DNS记录，确认是否存在指定的值。</p><p><strong>优点</strong>：不需要访问服务器，只需要域名管理权限</p><p><strong>缺点</strong>：DNS生效时间可能较长（通常几分钟到48小时）</p></blockquote></li><li><p>文件验证</p><blockquote><p>在域名关联的网站的根目录下上传一个指定名称的文件，文件内容由验证服务提供。验证时，系统访问文件的URL（例如<code>http://example.com/.well-known/acme-challenge/</code>）并检查内容。</p><p><strong>优点</strong>：简单快速，适合拥有服务器文件访问权限的用户。<br><strong>缺点</strong>：需要对域名对应的网站具有管理权限。</p></blockquote></li><li><p>邮箱验证</p><blockquote><p>向域名注册人邮箱发送一封验证邮件，要求点击其中的链接确认。</p><p>通常使用的邮箱包括<code>admin@domain.com</code>、<code>hostmaster@domain.com</code>等。</p><p><strong>优点</strong>：适用于无法修改DNS或服务器配置的情况。<br><strong>缺点</strong>：需要有权访问特定邮箱。</p></blockquote></li><li><p>…</p></li></ul><p>这里我选择的是，<strong>DNS记录验证</strong>，<code>acme.sh</code> 首选的是文件验证，但是总会出先一些失败，所以干脆就用过程相对透明可控的 <strong>DNS记录验证</strong>，dns 方式的真正强大之处在于可以使用域名解析商提供的 api 自动添加 txt 记录完成验证.</p><p>我在阿里云买的域名，<a href="https://github.com/acmesh-official/acme.sh/wiki/dnsapi#dns_ali">这个是如何添加阿里云的API的方法</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> Ali_Key=<span class="string">&quot;&lt;key&gt;&quot;</span></span><br><span class="line"><span class="built_in">export</span> Ali_Secret=<span class="string">&quot;&lt;secret&gt;&quot;</span></span><br><span class="line"></span><br><span class="line">acme.sh --issue --dns dns_ali -d example.com -d *.example.com</span><br></pre></td></tr></table></figure><h4 id="3-拷贝证书"><a href="#3-拷贝证书" class="headerlink" title="3. 拷贝证书"></a><strong>3. 拷贝证书</strong></h4><p> 前面证书生成以后, 接下来需要把证书 copy 到真正需要用它的地方.</p><p> 注意, 默认生成的证书都放在安装目录下: <code>~/.acme.sh/</code>, 请不要直接使用此目录下的文件, 例如: 不要直接让 nginx&#x2F;apache 的配置文件使用这下面的文件. 这里面的文件都是内部使用, 而且目录结构可能会变化.</p><p> 正确的使用方法是使用 <code>--install-cert</code> 命令,并指定目标位置, 然后证书文件会被copy到相应的位置, 例如：</p><p><strong>Nginx example :</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">acme.sh --install-cert -d example.com \</span><br><span class="line">--key-file       /path/to/keyfile/in/nginx/key.pem  \</span><br><span class="line">--fullchain-file /path/to/fullchain/nginx/cert.pem \</span><br><span class="line">--reloadcmd     <span class="string">&quot;service nginx force-reload&quot;</span></span><br></pre></td></tr></table></figure><h4 id="4-其他"><a href="#4-其他" class="headerlink" title="4. 其他"></a>4. 其他</h4><p> 其他更多操作见 <a href="https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E">https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 证书 </tag>
+            
+            <tag> ssl </tag>
+            
+            <tag> letsEncrypt </tag>
+            
+            <tag> 网站 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>docker设置网络代理</title>
+      <link href="/2024/11/16/posts/docker%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/"/>
+      <url>/2024/11/16/posts/docker%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C%E4%BB%A3%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>由于国内网络的限制国内众多仓库的关闭，docker无法拉取官方镜像<span id="more"></span></p><p>Docker 默认情况下不继承系统的环境变量设置（例如 <code>export http_proxy</code>）。因此，即使通过 <code>export http_proxy</code> 配置了代理，Docker 也不会自动使用这些变量。这是因为 Docker 是一个守护进程，其网络配置独立于用户的 Shell 环境。因此即使设置了全局代理，Docker 依然无法直接使用这些代理。</p><p>正确设置步骤如下(ubuntu):</p><ol><li><p><strong>配置 Docker 的代理文件</strong>：在 <code>/etc/systemd/system/docker.service.d/</code> 下创建 <code>http-proxy.conf</code> 文件，内容如下：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="string">Service</span>]</span><br><span class="line"><span class="string">Environment=&quot;HTTP_PROXY=http://代理IP:端口号&quot;</span></span><br><span class="line"><span class="string">Environment=&quot;HTTPS_PROXY=http://代理IP:端口号&quot;</span></span><br><span class="line"><span class="string">Environment=&quot;NO_PROXY=localhost,127.0.0.1&quot;</span></span><br></pre></td></tr></table></figure></li><li><p><strong>重启 Docker</strong>：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl restart docker</span><br></pre></td></tr></table></figure></li></ol><p>这样设置后，Docker 应该可以正常通过代理拉取镜像。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> docker </tag>
+            
+            <tag> 代理 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>未言日</title>
       <link href="/2024/06/19/diaries/%E6%9C%AA%E8%A8%80%E6%97%A5/"/>
       <url>/2024/06/19/diaries/%E6%9C%AA%E8%A8%80%E6%97%A5/</url>
